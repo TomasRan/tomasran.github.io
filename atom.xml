@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-07-31T05:28:52.000Z</updated>
+  <updated>2016-07-31T05:38:07.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Unicode编码方式一二三</title>
+    <title>今日Unicode字符集及其编码方式</title>
     <link href="tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/"/>
     <id>tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/</id>
     <published>2016-07-31T05:04:39.000Z</published>
-    <updated>2016-07-31T05:28:52.000Z</updated>
+    <updated>2016-07-31T05:38:07.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议去看看 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，可以去看看 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Unicode的设计目标&quot;&gt;&lt;a href=&quot;#Unicode的设计目标&quot; class=&quot;headerlink&quot; title=&quot;Unicode的设计目标&quot;&gt;&lt;/a&gt;Unicode的设计目标&lt;/h2&gt;&lt;p&gt;Unicode的诞生，基于人们希望能够拥有一个统一字符集以容纳世界上所有字符的念想。&lt;/p&gt;
 &lt;p&gt;任何改革始于矛盾。在Unicode诞生之前，各个国家为了能够让自己的语言得到支持，大量的区域特定字符集被创造出来，即便是较为通用的ASCII码字符集也只是对拉丁字母的支持度较高，而对于大量的亚洲字符却无可奈何。这给计算机制造商带来的问题就是他们必须实现所有的字符编码方案来让他们的机器可以满足不同使用者的需求，使用多语言的时候还需要在各种编码方案之间进行来回切换着实令人懊恼。&lt;/p&gt;
@@ -186,12 +186,12 @@
 &lt;li&gt;完美兼容ASCII码编码方案，这意味着以前的ASCII码文本不需要做任何转换就可以被UTF-8理解以及编码。&lt;/li&gt;
 &lt;li&gt;UTF-8编码没有字节序的问题（了解 &lt;a href=&quot;&quot;&gt;字节序编码方案？&lt;/a&gt;）。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h3&gt;&lt;p&gt;为了不在编码的问题上陷入恐慌，以上对Unicode编码进行了一些总结，表达了一些个人理解。求知者在前行的路上，点滴积累，弥足珍贵。&lt;/p&gt;
+&lt;h3 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h3&gt;&lt;p&gt;为了不在编码的问题上陷入恐慌，以上对Unicode编码进行了一些总结，表达了一些个人理解。前行的路上，点滴积累，弥足珍贵。&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议去看看 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
+      &lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，可以去看看 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
     
     </summary>
     
