@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-07-31T05:07:08.000Z</updated>
+  <updated>2016-07-31T05:07:17.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/"/>
     <id>tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/</id>
     <published>2016-07-31T05:04:39.000Z</published>
-    <updated>2016-07-31T05:07:08.000Z</updated>
+    <updated>2016-07-31T05:07:17.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议先阅读 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
 &lt;h2 id=&quot;Unicode的设计目标&quot;&gt;&lt;a href=&quot;#Unicode的设计目标&quot; class=&quot;headerlink&quot; title=&quot;Unicode的设计目标&quot;&gt;&lt;/a&gt;Unicode的设计目标&lt;/h2&gt;&lt;p&gt;Unicode的诞生，基于人们希望能够拥有一个统一字符集以容纳世界上所有字符的念想。&lt;/p&gt;
