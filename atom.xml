@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-07-31T05:07:17.000Z</updated>
+  <updated>2016-07-31T05:22:25.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/"/>
     <id>tomasran.space/archives/F4qs05oXDOsn0hPDjHJscg/</id>
     <published>2016-07-31T05:04:39.000Z</published>
-    <updated>2016-07-31T05:07:17.000Z</updated>
+    <updated>2016-07-31T05:22:25.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议先阅读 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Unicode的设计目标&quot;&gt;&lt;a href=&quot;#Unicode的设计目标&quot; class=&quot;headerlink&quot; title=&quot;Unicode的设计目标&quot;&gt;&lt;/a&gt;Unicode的设计目标&lt;/h2&gt;&lt;p&gt;Unicode的诞生，基于人们希望能够拥有一个统一字符集以容纳世界上所有字符的念想。&lt;/p&gt;
 &lt;p&gt;任何改革始于矛盾。在Unicode诞生之前，各个国家为了能够让自己的语言得到支持，大量的区域特定字符集被创造出来，即便是较为通用的ASCII码字符集也只是对拉丁字母的支持度较高，而对于大量的亚洲字符却无可奈何。这给计算机制造商带来的问题就是他们必须实现所有的字符编码方案来让他们的机器可以满足不同使用者的需求，使用多语言的时候还需要在各种编码方案之间进行来回切换着实令人懊恼。&lt;/p&gt;
 &lt;p&gt;矛盾如此突出，也就很自然地催生出尽快统一字符集的想法。在这样的环境下，Unicode应运而生。&lt;/p&gt;
@@ -121,7 +122,7 @@
 &lt;p&gt;所以关键问题就落到在这样一串连续的二进制数据中，我们如何去按照字符编号结果为单位去划分，毕竟每个字符编号结果位数可能不一样，如果编码值的位数都是16-bit的话那以16-bit为单位划分即可，而事实并非如此，这样，我们进一步明确目标：解码的时候我们究竟是截取16位还是32位？&lt;/p&gt;
 &lt;p&gt;这个时候，我们看到了代理对的作用。32位的编码值都是采用高-低位代理对的形式。高位代理的值的范围是 0xD800 ~ 0xDBFF（转化为二进制就是 1101100000000000 ~ 1101101111111111），而这一区段不在BMP平面的编码值的范围内，因此，当我们遇到这个范围内的16为二进制数据，就知道它和接下来的16位一定是组成一个代理对。这样，我们就能区分开32位和16位的编码值了。以上问题得解。&lt;/p&gt;
 &lt;p&gt;唠叨了这么多，总算是验证了UTF-16编码的合理性。然而还并没有结束，接下来，就来看看现在广为流传使用的UTF-8编码格式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://o6lqh5p0j.bkt.clouddn.com/ikon-11810018.jpg&quot; alt=&quot;终点&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o6lqh5p0j.bkt.clouddn.com/Go_On_intertitle.jpeg&quot; alt=&quot;继续&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;UTF-8&quot;&gt;&lt;a href=&quot;#UTF-8&quot; class=&quot;headerlink&quot; title=&quot;UTF-8&quot;&gt;&lt;/a&gt;UTF-8&lt;/h3&gt;&lt;p&gt;和UTF-16一样，UTF-8也是变长的编码方式。不过，起初它采用 1 ~ 6 个字节去编码一个字符（RFC 3629重新规定其只能编码Unicode的原有字符集 0x0 ~ 0x100000，也就是最多采用4个字节足矣）。&lt;/p&gt;
 &lt;p&gt;既然是对Unicode字符集的编码，那么我们就先来看看它的编码值和Unicode编号空间的对应关系吧，别说话，接镖：&lt;/p&gt;
 &lt;table&gt;
@@ -175,9 +176,11 @@
 &lt;/blockquote&gt;
 &lt;h5 id=&quot;吃栗子比较容易消化&quot;&gt;&lt;a href=&quot;#吃栗子比较容易消化&quot; class=&quot;headerlink&quot; title=&quot;吃栗子比较容易消化&quot;&gt;&lt;/a&gt;吃栗子比较容易消化&lt;/h5&gt;&lt;p&gt;例如带上圆圈和锐音符的拉丁文大写字母 Ǻ 的Unicode字符编号为U+01FA，根据上述方法的计算过程如下：&lt;/p&gt;
 &lt;p&gt;步骤一：确定区间&lt;/p&gt;
-&lt;figure class=&quot;highlight autohotkey&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;U+&lt;span class=&quot;number&quot;&gt;01&lt;/span&gt;FA 落在区间 &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;x0080 ~ &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;x07FF，因此编码值为 &lt;span class=&quot;number&quot;&gt;110&lt;/span&gt;yyyyy &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;yyyyyy，共&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;个未知数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;步骤二：Unicode字符编码二进制化&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;U+01FA 的二进制形式为 0000 0001 1111 1010，从低位开始向上截取11位得到： 001 1111 1010&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;步骤三：按顺序依次填充&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;将上步的二进制结果按顺序替换y，则得到编码结果： 11000111 10111010&lt;br&gt;```&lt;/p&gt;
+&lt;figure class=&quot;highlight x86asm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;U+01FA 落在区间 &lt;span class=&quot;number&quot;&gt;0x0080&lt;/span&gt; ~ &lt;span class=&quot;number&quot;&gt;0x07FF&lt;/span&gt;，因此编码值为 110yyyyy 10yyyyyy，共&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;个未知数&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;步骤二：Unicode字符编码二进制化&lt;/p&gt;
+&lt;figure class=&quot;highlight dns&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;U+&lt;span class=&quot;number&quot;&gt;01&lt;/span&gt;FA 的二进制形式为 &lt;span class=&quot;number&quot;&gt;0000 0001&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1111 1010&lt;/span&gt;，从低位开始向上截取&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;位得到： &lt;span class=&quot;number&quot;&gt;001 1111&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1010&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;步骤三：按顺序依次填充&lt;/p&gt;
+&lt;figure class=&quot;highlight dns&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;将上步的二进制结果按顺序替换y，则得到编码结果： &lt;span class=&quot;number&quot;&gt;11000111&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;10111010&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h5 id=&quot;UTF-8编码的优势&quot;&gt;&lt;a href=&quot;#UTF-8编码的优势&quot; class=&quot;headerlink&quot; title=&quot;UTF-8编码的优势&quot;&gt;&lt;/a&gt;UTF-8编码的优势&lt;/h5&gt;&lt;p&gt;技术领域的流行都有着看上去足够理智的原因：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;完美兼容ASCII码编码方案，这意味着以前的ASCII码文本不需要做任何转换就可以被UTF-8理解以及编码。&lt;/li&gt;
@@ -188,7 +191,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议先阅读 &lt;a href=&quot;ht
+      &lt;h2 id=&quot;万事俱备，再唤东风&quot;&gt;&lt;a href=&quot;#万事俱备，再唤东风&quot; class=&quot;headerlink&quot; title=&quot;万事俱备，再唤东风&quot;&gt;&lt;/a&gt;万事俱备，再唤东风&lt;/h2&gt;&lt;p&gt;之前有讨论过关于字符编码的问题，如果对此毫无了解，建议先阅读 &lt;a href=&quot;http://tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/&quot;&gt;关于字符集、编码字符集和字符编码&lt;/a&gt;，这里将不再强调一些基本的概念，而是想分析一下具体的字符集及其编码方式。我们的目标锁定在Unicode，话不多说，扬帆起航！&lt;/p&gt;
     
     </summary>
     
