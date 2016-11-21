@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-07-31T05:38:07.000Z</updated>
+  <updated>2016-11-21T08:17:31.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript函数相关</title>
+    <link href="tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/"/>
+    <id>tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/</id>
+    <published>2016-11-21T07:55:12.000Z</published>
+    <updated>2016-11-21T08:17:31.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：&lt;/p&gt;
+&lt;h4 id=&quot;函数式编程不可或缺&quot;&gt;&lt;a href=&quot;#函数式编程不可或缺&quot; class=&quot;headerlink&quot; title=&quot;函数式编程不可或缺&quot;&gt;&lt;/a&gt;函数式编程不可或缺&lt;/h4&gt;&lt;p&gt;Javascript是一门支持函数式编程的语言，当然这不是确立函数至尊地位的关键因素，毕竟支持函数式编程的语言不胜枚举。不过很明显，这种编程思想的核心是函数，举足轻重。&lt;/p&gt;
+&lt;h4 id=&quot;面向对象编程的依赖&quot;&gt;&lt;a href=&quot;#面向对象编程的依赖&quot; class=&quot;headerlink&quot; title=&quot;面向对象编程的依赖&quot;&gt;&lt;/a&gt;面向对象编程的依赖&lt;/h4&gt;&lt;p&gt;Javascript使用构造函数实现传统面向对象语言类的概念，构造函数与普通函数并没有任何区别，只是在命名上按照面向对象语言的习惯，统一使用大驼峰形式。&lt;/p&gt;
+&lt;h4 id=&quot;函数声明优先级更高&quot;&gt;&lt;a href=&quot;#函数声明优先级更高&quot; class=&quot;headerlink&quot; title=&quot;函数声明优先级更高&quot;&gt;&lt;/a&gt;函数声明优先级更高&lt;/h4&gt;&lt;p&gt;变量提升时函数声明会覆盖同名的变量，函数声明的优先级高于变量，待遇优厚。比如下面这段代码：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var fn = 3;&lt;br&gt;&lt;br&gt;function fn() {};&lt;br&gt;&lt;br&gt;var fn = 2;&lt;br&gt;&lt;br&gt;console.log(typeof fn);&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输出的是什么？答案是’function’，函数声明优先于变量声明。&lt;/p&gt;
+&lt;h4 id=&quot;语言采用的是函数作用域&quot;&gt;&lt;a href=&quot;#语言采用的是函数作用域&quot; class=&quot;headerlink&quot; title=&quot;语言采用的是函数作用域&quot;&gt;&lt;/a&gt;语言采用的是函数作用域&lt;/h4&gt;&lt;p&gt;Javascript使用的是函数作用域，至少在ES6出现之前（ES6开始支持块级作用域），作用域的生成以函数为单位。&lt;/p&gt;
+&lt;h4 id=&quot;函数亦可赋值，传参&quot;&gt;&lt;a href=&quot;#函数亦可赋值，传参&quot; class=&quot;headerlink&quot; title=&quot;函数亦可赋值，传参&quot;&gt;&lt;/a&gt;函数亦可赋值，传参&lt;/h4&gt;&lt;p&gt;函数也可以作为参数传递，可以作为返回值返回。正是它一等公民的身份写照！在Javascript中这几乎是随处可见，例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;function fn() {&lt;br&gt;&lt;br&gt;    return function() { console.log(‘I\’m the function inside!’) }&lt;br&gt;&lt;br&gt;}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;函数在Javascript国土一手遮天，侵入者是不是应该先跟它打个招呼呢？&lt;/p&gt;
+&lt;h3 id=&quot;函数调用&quot;&gt;&lt;a href=&quot;#函数调用&quot; class=&quot;headerlink&quot; title=&quot;函数调用&quot;&gt;&lt;/a&gt;函数调用&lt;/h3&gt;&lt;p&gt;怎样去执行一个函数，在Javascript中大致有四种方式进函数调用。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;默认函数调用形式。&lt;/li&gt;
+&lt;li&gt;对象方法调用形式。&lt;/li&gt;
+&lt;li&gt;构造器调用形式。&lt;/li&gt;
+&lt;li&gt;bind，call，apply调用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在此不做详述。&lt;/p&gt;
+&lt;h3 id=&quot;this关键字&quot;&gt;&lt;a href=&quot;#this关键字&quot; class=&quot;headerlink&quot; title=&quot;this关键字&quot;&gt;&lt;/a&gt;this关键字&lt;/h3&gt;&lt;p&gt;函数中一个非常重要的概念就是this关键字，因为它的多变性，迷惑了一代又一代青年才俊。我们在一个函数中使用this，这个this指向哪里完全取决于函数执行时的调用方式。&lt;/p&gt;
+&lt;p&gt;非严格模式下，默认调用方式指向全局对象，严格模式下指向undefined；对象方法调用形式指向对象本身；构造器调用形式指向实例化后的对象；bind、call、apply调用指向传递的上下文环境。优先级是：构造函数形式 &amp;gt; bind、call和apply &amp;gt; 方法调用 &amp;gt; 默认调用。例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var Fn = function(name) { this.name = name; }&lt;br&gt;&lt;br&gt;var obj = {};&lt;br&gt;&lt;br&gt;&lt;br&gt;Fn = Fn.bind(obj);&lt;br&gt;&lt;br&gt;Fn(‘tomas’);&lt;br&gt;&lt;br&gt;console.log(obj.name); // ‘tomas’&lt;br&gt;&lt;br&gt;&lt;br&gt;var fn = new Fn(‘tomasran’)&lt;br&gt;&lt;br&gt;console.log(obj.name); // ‘tomas’&lt;br&gt;&lt;br&gt;console.log(fn.name); // ‘tomasran’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在上面的例子中，使用两种不同方式，执行被绑定了obj对象的函数Fn，第一次成功修改了obj.name值，因为Fn.bind(obj)使Fn执行时候的this指针绑定到了obj上；第二次采用构造函数调用，而结果obj.name的值并没有修改，这说明构造函数执行时内部的this指针并不是绑定到obj。结论不言而喻，在this指针的绑定上，构造函数的优先级大于bind、call、apply此类硬绑定的形式。&lt;/p&gt;
+&lt;p&gt;无意中说漏了一个词：硬绑定。为此，不得不多增加一点篇幅解释一下。&lt;/p&gt;
+&lt;h3 id=&quot;硬绑定&quot;&gt;&lt;a href=&quot;#硬绑定&quot; class=&quot;headerlink&quot; title=&quot;硬绑定&quot;&gt;&lt;/a&gt;硬绑定&lt;/h3&gt;&lt;p&gt;有一种常见的现象叫做绑定丢失。这是一个什么概念？举例来说，当我们有如下这段代码：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var obj = {&lt;br&gt;name: ‘tomas’,&lt;br&gt;fn: function() {console.log(this.name);}&lt;br&gt;}&lt;br&gt;&lt;br&gt;var foo = obj.fn;&lt;br&gt;&lt;br&gt;foo(); //  输出 ‘undefined’&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果我们直接调用obj.fn()，显然这是方法调用模式，this指向obj对象，输出为 ‘tomas’；但是现在我们并没有这样做，而是先将obj.fn赋给了一个变量foo，然后执行&lt;code&gt;foo()&lt;/code&gt;，之后，便惊奇地发现输出值并非我们所期望的。这是因为此时foo直接指向了obj.fn这个函数的内存地址，此时的调用形式是默认调用，这就是所谓的绑定丢失。如何解决？答案就是采用硬绑定：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;var foo = function() { return obj.fn.apply(obj, arguments)};&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样，调用 &lt;code&gt;foo()&lt;/code&gt; 就会执行绑定了obj对象的fn函数。ES5提供的bind方法就是为此需求而诞生的。&lt;/p&gt;
+&lt;h3 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h3&gt;&lt;p&gt;关于函数，稍微絮叨了一番，累了，歇会儿。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些
+    
+    </summary>
+    
+      <category term="Javascript" scheme="tomasran.space/category/Javascript/"/>
+    
+    
+      <category term="硬绑定" scheme="tomasran.space/tags/%E7%A1%AC%E7%BB%91%E5%AE%9A/"/>
+    
+      <category term="绑定丢失" scheme="tomasran.space/tags/%E7%BB%91%E5%AE%9A%E4%B8%A2%E5%A4%B1/"/>
+    
+      <category term="this指针" scheme="tomasran.space/tags/this%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>今日Unicode字符集及其编码方式</title>
