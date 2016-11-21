@@ -414,48 +414,15 @@
 
       
         
-          
-            <h3 id="函数之重，重于泰山"><a href="#函数之重，重于泰山" class="headerlink" title="函数之重，重于泰山"></a>函数之重，重于泰山</h3><p>人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：</p>
+          <h3 id="函数之重，重于泰山"><a href="#函数之重，重于泰山" class="headerlink" title="函数之重，重于泰山"></a>函数之重，重于泰山</h3><p>人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：</p>
 <h4 id="函数式编程不可或缺"><a href="#函数式编程不可或缺" class="headerlink" title="函数式编程不可或缺"></a>函数式编程不可或缺</h4><p>Javascript是一门支持函数式编程的语言，当然这不是确立函数至尊地位的关键因素，毕竟支持函数式编程的语言不胜枚举。不过很明显，这种编程思想的核心是函数，举足轻重。</p>
-<h4 id="面向对象编程的依赖"><a href="#面向对象编程的依赖" class="headerlink" title="面向对象编程的依赖"></a>面向对象编程的依赖</h4><p>Javascript使用构造函数实现传统面向对象语言类的概念，构造函数与普通函数并没有任何区别，只是在命名上按照面向对象语言的习惯，统一使用大驼峰形式。</p>
-<h4 id="函数声明优先级更高"><a href="#函数声明优先级更高" class="headerlink" title="函数声明优先级更高"></a>函数声明优先级更高</h4><p>变量提升时函数声明会覆盖同名的变量，函数声明的优先级高于变量，待遇优厚。比如下面这段代码：</p>
-<blockquote>
-<p>var fn = 3;<br><br>function fn() {};<br><br>var fn = 2;<br><br>console.log(typeof fn);</p>
-</blockquote>
-<p>输出的是什么？答案是’function’，函数声明优先于变量声明。</p>
-<h4 id="语言采用的是函数作用域"><a href="#语言采用的是函数作用域" class="headerlink" title="语言采用的是函数作用域"></a>语言采用的是函数作用域</h4><p>Javascript使用的是函数作用域，至少在ES6出现之前（ES6开始支持块级作用域），作用域的生成以函数为单位。</p>
-<h4 id="函数亦可赋值，传参"><a href="#函数亦可赋值，传参" class="headerlink" title="函数亦可赋值，传参"></a>函数亦可赋值，传参</h4><p>函数也可以作为参数传递，可以作为返回值返回。正是它一等公民的身份写照！在Javascript中这几乎是随处可见，例如：</p>
-<blockquote>
-<p>function fn() {<br><br>    return function() { console.log(‘I\’m the function inside!’) }<br><br>}</p>
-</blockquote>
-<p>函数在Javascript国土一手遮天，侵入者是不是应该先跟它打个招呼呢？</p>
-<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p>怎样去执行一个函数，在Javascript中大致有四种方式进函数调用。</p>
-<ol>
-<li>默认函数调用形式。</li>
-<li>对象方法调用形式。</li>
-<li>构造器调用形式。</li>
-<li>bind，call，apply调用。</li>
-</ol>
-<p>在此不做详述。</p>
-<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p>函数中一个非常重要的概念就是this关键字，因为它的多变性，迷惑了一代又一代青年才俊。我们在一个函数中使用this，这个this指向哪里完全取决于函数执行时的调用方式。</p>
-<p>非严格模式下，默认调用方式指向全局对象，严格模式下指向undefined；对象方法调用形式指向对象本身；构造器调用形式指向实例化后的对象；bind、call、apply调用指向传递的上下文环境。优先级是：构造函数形式 &gt; bind、call和apply &gt; 方法调用 &gt; 默认调用。例如：</p>
-<blockquote>
-<p>var Fn = function(name) { this.name = name; }<br><br>var obj = {};<br><br><br>Fn = Fn.bind(obj);<br><br>Fn(‘tomas’);<br><br>console.log(obj.name); // ‘tomas’<br><br><br>var fn = new Fn(‘tomasran’)<br><br>console.log(obj.name); // ‘tomas’<br><br>console.log(fn.name); // ‘tomasran’</p>
-</blockquote>
-<p>在上面的例子中，使用两种不同方式，执行被绑定了obj对象的函数Fn，第一次成功修改了obj.name值，因为Fn.bind(obj)使Fn执行时候的this指针绑定到了obj上；第二次采用构造函数调用，而结果obj.name的值并没有修改，这说明构造函数执行时内部的this指针并不是绑定到obj。结论不言而喻，在this指针的绑定上，构造函数的优先级大于bind、call、apply此类硬绑定的形式。</p>
-<p>无意中说漏了一个词：硬绑定。为此，不得不多增加一点篇幅解释一下。</p>
-<h3 id="硬绑定"><a href="#硬绑定" class="headerlink" title="硬绑定"></a>硬绑定</h3><p>有一种常见的现象叫做绑定丢失。这是一个什么概念？举例来说，当我们有如下这段代码：</p>
-<blockquote>
-<p>var obj = {<br>name: ‘tomas’,<br>fn: function() {console.log(this.name);}<br>}<br><br>var foo = obj.fn;<br><br>foo(); //  输出 ‘undefined’</p>
-</blockquote>
-<p>如果我们直接调用obj.fn()，显然这是方法调用模式，this指向obj对象，输出为 ‘tomas’；但是现在我们并没有这样做，而是先将obj.fn赋给了一个变量foo，然后执行<code>foo()</code>，之后，便惊奇地发现输出值并非我们所期望的。这是因为此时foo直接指向了obj.fn这个函数的内存地址，此时的调用形式是默认调用，这就是所谓的绑定丢失。如何解决？答案就是采用硬绑定：</p>
-<blockquote>
-<p>var foo = function() { return obj.fn.apply(obj, arguments)};</p>
-</blockquote>
-<p>这样，调用 <code>foo()</code> 就会执行绑定了obj对象的fn函数。ES5提供的bind方法就是为此需求而诞生的。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>关于函数，稍微絮叨了一番，累了，歇会儿。</p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/archives/QvKCA14vYKd0ejUlJjdz8w/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
