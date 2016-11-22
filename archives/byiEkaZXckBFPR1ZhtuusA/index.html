@@ -89,10 +89,7 @@
 <meta name="description" content="参与内容
 资源列表公共组件
 教学资源平台列表菜单的重构
-教学资源页面逻辑的重构
-
-所历所思
-代码规范相关一个团队的项目是否应该统一编码风格？在曾经的一家强烈追求geek风格的公司小憩了一段岁月，该司要求一个项目的编码风格应当一致。依着作为一个程序员饱受沧桑的记忆，当时使用的应该是 pre-commit 工具，然而这个工具却不是对代码进行智能格式化，只是定义一些编程风格规则，仍然是基于es-lint">
+教学资源页面逻辑的重构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目总结：Okay教育智慧平台v1.7.0.1">
 <meta property="og:url" content="tomasran.space/archives/byiEkaZXckBFPR1ZhtuusA/index.html">
@@ -100,21 +97,15 @@
 <meta property="og:description" content="参与内容
 资源列表公共组件
 教学资源平台列表菜单的重构
-教学资源页面逻辑的重构
-
-所历所思
-代码规范相关一个团队的项目是否应该统一编码风格？在曾经的一家强烈追求geek风格的公司小憩了一段岁月，该司要求一个项目的编码风格应当一致。依着作为一个程序员饱受沧桑的记忆，当时使用的应该是 pre-commit 工具，然而这个工具却不是对代码进行智能格式化，只是定义一些编程风格规则，仍然是基于es-lint">
+教学资源页面逻辑的重构">
 <meta property="og:image" content="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg">
-<meta property="og:updated_time" content="2016-11-22T02:37:48.000Z">
+<meta property="og:updated_time" content="2016-11-22T02:40:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目总结：Okay教育智慧平台v1.7.0.1">
 <meta name="twitter:description" content="参与内容
 资源列表公共组件
 教学资源平台列表菜单的重构
-教学资源页面逻辑的重构
-
-所历所思
-代码规范相关一个团队的项目是否应该统一编码风格？在曾经的一家强烈追求geek风格的公司小憩了一段岁月，该司要求一个项目的编码风格应当一致。依着作为一个程序员饱受沧桑的记忆，当时使用的应该是 pre-commit 工具，然而这个工具却不是对代码进行智能格式化，只是定义一些编程风格规则，仍然是基于es-lint">
+教学资源页面逻辑的重构">
 <meta name="twitter:image" content="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg">
 
 
@@ -420,7 +411,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_civsw6usx000sxl02hp69a33m"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_civsw9b9v000tz902unzdqmew"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" itemprop="contentUrl"/>
               </a>
@@ -438,6 +429,7 @@
 <li>教学资源平台列表菜单的重构</li>
 <li>教学资源页面逻辑的重构</li>
 </ul>
+<a id="more"></a>
 <h3 id="所历所思"><a href="#所历所思" class="headerlink" title="所历所思"></a>所历所思</h3><ul>
 <li><p><strong>代码规范相关</strong><br>一个团队的项目是否应该统一编码风格？在曾经的一家强烈追求geek风格的公司小憩了一段岁月，该司要求一个项目的编码风格应当一致。依着作为一个程序员饱受沧桑的记忆，当时使用的应该是 <a href="http://pre-commit.com/" target="_blank" rel="external">pre-commit</a> 工具，然而这个工具却不是对代码进行智能格式化，只是定义一些编程风格规则，仍然是基于es-lint或者js-lint之类的代码风格检测工具，倘若不符合这些规则，代码commit时会提示失败，并给出代码风格不符合规则的具体日志，然后人工去修改代码。当时刚入江湖，初出茅庐，还并没有形成自己重度依赖的编程风格，一切听从组织安排。而实际上，在实践的过程中我也很喜欢这种方式，因为它尽可能地提醒了我怎样写代码才够合理。<br><br>那么以下我所能体验到的代码风格统一的优点：<br>① 整个项目一种风格，不管接触哪一部分代码，都有一个熟悉的切入点。李代桃僵之时，减轻了不少阅读障碍。这样，在项目紧张的时候，临时加入的程序员就无需花更多心思去解读每个人的编程风格，对于boss而言，效率提升自然是最佳的。<br>② 编码风格的统一，对于代码bug的减少是有裨益的，一般指定的风格规则，都会是一些编程的最佳实践，肯定不会剑走偏锋。<br>③ 利于团队和谐，这一点似乎是意料之外的事，然而细思之下，却也是有些道理。作为两只有洁癖而风格各异的程序猿，在修改彼此代码的时候很容易心生怨念，自以为是，各执一词。然而风格的事情，谁也定不准个谁是谁非，而事实上很多风格确实也并分不出高下。最难解决的争议便是没有绝对非对错的争议。这时候，一统天下无疑是最好的方式，始皇帝一统天下，不服气的，斩！世界和谐。<br><br>目前的Okay教育智慧平台项目，并没有采用统一的编码风格，因此不可避免的，呈现出一种百花齐放百家争鸣的风格景象。群雄逐鹿难免造成混乱。各自为政，在自己的管辖区域如鱼得水，而涉足别人的领地时往往不知所措，耗时良久。感觉从工程效率的角度出发，统一风格是一种很好的方式。有人会说了，这是赤裸裸的压迫！没有编码自由度！每一个新人都要学习遵守代码风格，很耗时！没错，但是个人认为这比一个项目变成万花筒要更容易被接受一点。</p>
 </li>
