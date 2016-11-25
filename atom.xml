@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-11-25T06:43:45.000Z</updated>
+  <updated>2016-11-25T06:43:59.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
     <id>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</id>
     <published>2016-11-25T06:41:41.000Z</published>
-    <updated>2016-11-25T06:43:45.000Z</updated>
+    <updated>2016-11-25T06:43:59.000Z</updated>
     
     <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
