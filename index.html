@@ -400,7 +400,7 @@
         
           
             <p>原文链接：<a href="https://webpack.js.org/concepts/" target="_blank" rel="external">https://webpack.js.org/concepts/</a></p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有<a href="https://webpack.js.org/configuration/" target="_blank" rel="external">惊人的可配置性</a>，不过，在使用之前我们觉得你必须理解四个核心的概念。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍<span id="introduce"></span></h2><p>webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有<a href="https://webpack.js.org/configuration/" target="_blank" rel="external">惊人的可配置性</a>，不过，在使用之前我们觉得你必须理解四个核心的概念。</p>
 <p>作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供和概念相关的特定用例的链接。</p>
 <h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>webpack会根据你的应用的依赖关系创建一张图。这张图的起点被视为入口。入口告诉webpack从哪里开始，以及按照依赖关系图如何去打包。你可以将你的应用的入口看做是上下文根节点或者访问你的应用的第一个文件。</p>
 <p>在webpack中，我们通过在 <a href="https://webpack.js.org/configuration/" target="_blank" rel="external">webpack配置对象</a> 中使用 <code>entry</code> 属性定义入口。</p>
@@ -414,8 +414,8 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>上面的例子，通过我们定义的 <code>output.filename</code> 和 <code>ouput.path</code> 属性去命名我们的包以及确定我们想要将它放置的位置。</p>
 <p><code>ouput</code> 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 <code>output</code> 属性更为通用的配置用例。</p>
-<p><a href="https://webpack.js.org/concepts/output/" target="_blank" rel="external">了解更多！</a></p>
-<h3 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h3><p>目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 <a href="https://webpack.js.org/concepts/modules/" target="_blank" rel="external">每一个文件（.css，.html，scss，.jpg，etc）视为一个模块</a>。然而，webpack<br><strong>只能理解Javascript代码</strong>。</p>
+<p><a href="#output">了解更多！</a></p>
+<h3 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h3><p>目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 <a href="#modules">每一个文件（.css，.html，scss，.jpg，etc）视为一个模块</a>。然而，webpack<br><strong>只能理解Javascript代码</strong>。</p>
 <p><strong>当将资源文件添加到你的依赖图中时，webpack中的加载器会将涉及的所有文件统统转化成为模块。</strong></p>
 <p>从高层次上来讲，你的webpack配置主要有两个目的：</p>
 <ol>
@@ -430,15 +430,47 @@
 </blockquote>
 <p>当在你的webpack配置中定义规则时，需要切记你应该在 <code>module.rules</code> 下面进行定义，而不是 <code>rules</code>。不过如果你采用了错误的方式webpack也会发出提醒。</p>
 <p>关于加载器还有很多我们没有谈及的特定属性可以进行定义。</p>
-<p><a href="https://webpack.js.org/concepts/loaders/" target="_blank" rel="external">了解更多！</a></p>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>加载器是基于每个文件执行转换，而<code>plugins</code> 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（<a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">或者更多</a>）。webpakc的插件系统<a href="https://webpack.js.org/api/plugins/" target="_blank" rel="external">十分强大并且可定制</a>。</p>
+<p><a href="#loader">了解更多！</a></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>加载器是基于每个文件执行转换，而<code>plugins</code> 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（<a href="#plugins">或者更多</a>）。webpakc的插件系统<a href="https://webpack.js.org/api/plugins/" target="_blank" rel="external">十分强大并且可定制</a>。</p>
 <p>为了使用一个插件，你只需要 <code>require（）</code> 它并且将它添加到 <code>plugins</code> 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 <code>new</code> 去初始化该插件的实例。</p>
 <p>webpack.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//installed via npm</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">//to access built-in plugins</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'./dist'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;test: <span class="regexp">/\.(js|jsx)$/</span>, use: <span class="string">'babel-loader'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;template: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
 <p>webpack提供了很多插入即用的插件！可以查看我们的 <a href="https://webpack.js.org/plugins/" target="_blank" rel="external">插件列表</a> 以获取更多信息。</p>
 <p>在你的webpack配置中使用插件相当轻松，然而有很多的用例更值得进一步讨论。</p>
-<p><a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">了解更多！</a></p>
-<h2 id="入口-1"><a href="#入口-1" class="headerlink" title="入口"></a>入口<a href="#entry"></a></h2>
+<p><a href="#plugins">了解更多！</a></p>
+<h2 id="入口-1"><a href="#入口-1" class="headerlink" title="入口"></a>入口<span id="entry"><span></span></span></h2><p>正如我们在 <a href="#introduce">介绍</a> 中提及的，在你的webpack配置文件中有多种方式去定义 <code>entry</code> 属性。我们将要介绍配置 <code>entry</code> 属性的方法，并且解释为什么它于你可能有用。</p>
+<h3 id="单入口-简写-语法"><a href="#单入口-简写-语法" class="headerlink" title="单入口 [简写] 语法"></a>单入口 [简写] 语法</h3><p>用法：<code>entry: String|Array&lt;String&gt;</code></p>
+<p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+<p>以上针对 <code>entry</code> 属性的单入口语法其实是下面的简写形式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    main: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当你传递一个数组给 <code>entry</code> 属性会发生什么？传递一个文件路径的数组给 <code>entry</code> 属性会建立一个所谓的“多主入口（multi-main entry）”。当你想要将多个独立的文件以及它们的依赖关系图一起注入到某个“分块（chunk)）”中的时候，这会非常有用。</p>
+</blockquote>
+<p>当你正在为仅拥有一个入口的应用或者工具（例如：一个库）寻找快速构建webpack应用的方法时，单入口语法将是很不错的选择。然而，当你需要为配置文件进行扩展时，这种语法的灵活性不足。</p>
+<h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>用法：<code>entry: {[entryChunkName: String]: String|Array&lt;String&gt;}</code></p>
+<p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这种语法较为冗长。然而，在你的应用中使用这种方式定义单个/多个入口最具有可伸缩性。</p>
+<blockquote>
+<p>“可伸缩的webpack配置（scalable webpack configurations）”指的是可以被复用以及能够由其它部分配置组合生成的配置。这是一个很受欢迎的技术，用来将环境，构建目标和运行环境分离。之后在用特定的工具将它们进行合并，例如 <a href="https://github.com/survivejs/webpack-merge" target="_blank" rel="external">webpack-merge</a>。</p>
+</blockquote>
+<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>下面是入口配置的一个列表以及在现实中的用例。</p>
+<h4 id="分离应用程序和第三方库入口"><a href="#分离应用程序和第三方库入口" class="headerlink" title="分离应用程序和第三方库入口"></a>分离应用程序和第三方库入口</h4><p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>它做了什么？从表面上来看，它告诉webpack分别从 <code>app.js</code> 和 <code>vendors.js</code> 这两个文件开始建立依赖关系图。这两张图完全是分开的，彼此独立（在每个bundle里都有一个webpack引导程序）。在只拥有一个入口的单页应用中通常都是这种情况（除了第三方库之外）。</p>
+<p>为什么？这种配置方式允许你利用 <code>CommonsChunkPlugin</code> 以及从你的应用程序bundle中提取第三方库的参考文献到第三方库的bundle中，并以 <code>__webpack_require__()</code> 调用代之。如果在你的应用程序bundle中没有第三方库的代码，你可以在webpack中实现一个公共模式，即所谓的 <a href="https://webpack.js.org/guides/caching/" target="_blank" rel="external">长期的第三方库缓存（long-term vendor-caching）</a>。</p>
+<h4 id="多页应用"><a href="#多页应用" class="headerlink" title="多页应用"></a>多页应用</h4><p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</span><br><span class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</span><br><span class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>它做了什么？我们正在告诉webpack我们想要三个独立的依赖关系图（就像上面例子的配置）。</p>
+<p>为什么？在多页应用中，服务器会取得新的HTML文档给你。页面重新加载新的文档，资源文件也会被重新下载。然而，这给了我们一个特别的机会去做很多事情：</p>
+<ul>
+<li>使用 <code>CommonsChunkPlugin</code> 在页面之间创建它们所共享的应用程序代码的bundle文件。对于在不同的入口之间复用大量代码和模块的多页应用程序，当入口数量增加的时候，会从此技术上获取很大的益处。</li>
+</ul>
+<blockquote>
+<p>首要规则：一个HTML文件只使用一个入口。</p>
+</blockquote>
+<h2 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出<span id="output"></span></h2><h2 id="加载器-1"><a href="#加载器-1" class="headerlink" title="加载器"></a>加载器<span id="loader"></span></h2><h2 id="插件-1"><a href="#插件-1" class="headerlink" title="插件"></a>插件<span id="plugins"></span></h2><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置<span id="configurations"></span></h2><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块<span id="modules"></span></h2><h2 id="模块分解"><a href="#模块分解" class="headerlink" title="模块分解"></a>模块分解<span id="modules-resolution"></span></h2><h2 id="依赖图"><a href="#依赖图" class="headerlink" title="依赖图"></a>依赖图<span id="dependency-graph"></span></h2><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标<span id="target"></span></h2><h2 id="热模块替换"><a href="#热模块替换" class="headerlink" title="热模块替换"></a>热模块替换<span id="hot-module"></span></h2>
           
         
       
@@ -585,7 +617,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_civxiszmp000hhw02dzt90j0z"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_civxmvel4000kx9fyr58ukqd0"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" itemprop="contentUrl"/>
               </a>
@@ -756,7 +788,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" rel="gallery_civxiszmr000jhw02bx4o2rox"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" rel="gallery_civxmvel8000px9fy1yngxm3h"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" itemprop="contentUrl"/>
               </a>
@@ -924,7 +956,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_civxiszmy000ohw022oggtqlb"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_civxmvela000qx9fywsyqmram"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" itemprop="contentUrl"/>
               </a>
@@ -1242,7 +1274,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" rel="gallery_civxiszmb0009hw02v51gyfyt"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" rel="gallery_civxmvekx000fx9fyp3fqfxfq"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" itemprop="contentUrl"/>
               </a>
@@ -1717,7 +1749,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.png" rel="gallery_civxiszm60006hw02a3aq7611"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.png" rel="gallery_civxmvekj0008x9fy84hj4fjx"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/%E9%BB%91%E5%AE%A2%E4%B8%8E%E7%94%BB%E5%AE%B6.png" itemprop="contentUrl"/>
               </a>
