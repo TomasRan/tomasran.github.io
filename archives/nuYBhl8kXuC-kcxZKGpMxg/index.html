@@ -96,7 +96,7 @@
 <meta property="og:description" content="原文链接：https://webpack.js.org/concepts/
 概念webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有惊人的可配置性，不过，在使用之前我们觉得你必须理解四个核心的概念。
 作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。">
-<meta property="og:updated_time" content="2016-11-25T07:44:19.000Z">
+<meta property="og:updated_time" content="2016-11-25T07:48:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack中文文档（一）：四个核心概念">
 <meta name="twitter:description" content="原文链接：https://webpack.js.org/concepts/
@@ -414,30 +414,30 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>根据你的应用的需求，可以有多种方法去声明入口。</p>
 <p><a href="https://webpack.js.org/concepts/entry-points/" target="_blank" rel="external">了解更多！</a></p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpack的 <strong>ouput</strong> 属性描述了webpack如何去处理打包后的代码。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpack的 <code>ouput</code> 属性描述了webpack如何去处理打包后的代码。</p>
 <p>webpack.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>上面的例子，通过我们定义的 <strong>output.filename</strong> 和 <strong>ouput.path</strong> 属性去命名我们的包以及确定我们想要将它放置的位置。</p>
-<p><strong>ouput</strong> 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 <strong>output</strong> 属性更为通用的配置用例。</p>
+<p>上面的例子，通过我们定义的 <code>output.filename</code> 和 <code>ouput.path</code> 属性去命名我们的包以及确定我们想要将它放置的位置。</p>
+<p><code>ouput</code> 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 <code>output</code> 属性更为通用的配置用例。</p>
 <p><a href="https://webpack.js.org/concepts/output/" target="_blank" rel="external">了解更多！</a></p>
-<h3 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h3><p>目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 <a href="https://webpack.js.org/concepts/modules/" target="_blank" rel="external">每一个文件（.css，.html，scss，.jpg，etc）视为一个模块</a>。然而，webpack<br><strong>只能理解Javascript代码</strong>。</p>
+<h3 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h3><p>目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 <a href="https://webpack.js.org/concepts/modules/" target="_blank" rel="external">每一个文件（.css，.html，scss，.jpg，etc）视为一个模块</a>。然而，webpack<br>只能理解Javascript代码。</p>
 <p><strong>当将资源文件添加到你的依赖图中时，webpack中的加载器会将涉及的所有文件统统转化成为模块。</strong></p>
 <p>从高层次上来讲，你的webpack配置主要有两个目的：</p>
 <ol>
-<li>通过特定的加载器识别需要进行转换的文件。（<strong>test</strong> 属性）</li>
-<li>将文件进行装换以便于它能够被添加到你的依赖图中（最终添加到你的包中）。（<strong>use</strong> 属性）</li>
+<li>通过特定的加载器识别需要进行转换的文件。（<code>test</code> 属性）</li>
+<li>将文件进行装换以便于它能够被添加到你的依赖图中（最终添加到你的包中）。（<code>use</code> 属性）</li>
 </ol>
 <p>webpack.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;test: <span class="regexp">/\.(js|jsx)$/</span>, use: <span class="string">'babel-loader'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>上面的配置中我们定义了使用加载器的规则，设置了它的两个必须属性：<strong>test</strong> 和 <strong>use</strong> 。它告诉webpack编译器下面的事情：</p>
+<p>上面的配置中我们定义了使用加载器的规则，设置了它的两个必须属性：<code>test</code> 和 <code>use</code> 。它告诉webpack编译器下面的事情：</p>
 <blockquote>
-<p> “webpack编译器，当你在分析 <strong>require()/import</strong> 声明中的路径时，遇到了 ‘.js’ 或者 ‘.jsx’文件，则在将它添加到打包结果之前，使用 <strong>babel-loader</strong> 去将它转换为模块。”</p>
+<p> “webpack编译器，当你在分析 <code>require()/import</code> 声明中的路径时，遇到了 ‘.js’ 或者 ‘.jsx’文件，则在将它添加到打包结果之前，使用 <code>babel-loader</code> 去将它转换为模块。”</p>
 </blockquote>
-<p>当在你的webpack配置中定义规则时，需要切记你应该在 <strong>module.rules</strong> 下面进行定义，而不是 <strong>rules</strong>。不过如果你采用了错误的方式webpack也会发出提醒。</p>
+<p>当在你的webpack配置中定义规则时，需要切记你应该在 <code>module.rules</code> 下面进行定义，而不是 <code>rules</code>。不过如果你采用了错误的方式webpack也会发出提醒。</p>
 <p>关于加载器还有很多我们没有谈及的特定属性可以进行定义。</p>
 <p><a href="https://webpack.js.org/concepts/loaders/" target="_blank" rel="external">了解更多！</a></p>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>加载器是基于每个文件执行转换，而<strong>plugins</strong> 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（<a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">或者更多</a>）。webpakc的插件系统<a href="https://webpack.js.org/api/plugins/" target="_blank" rel="external">十分强大并且可定制</a>。</p>
-<p>为了使用一个插件，你只需要 <strong>require（）</strong> 它并且将它添加到 <strong>plugins</strong> 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 <strong>new</strong> 去初始化该插件的实例。</p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>加载器是基于每个文件执行转换，而<code>plugins</code> 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（<a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">或者更多</a>）。webpakc的插件系统<a href="https://webpack.js.org/api/plugins/" target="_blank" rel="external">十分强大并且可定制</a>。</p>
+<p>为了使用一个插件，你只需要 <code>require（）</code> 它并且将它添加到 <code>plugins</code> 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 <code>new</code> 去初始化该插件的实例。</p>
 <p>webpack.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//installed via npm</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">//to access built-in plugins</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'./dist'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;test: <span class="regexp">/\.(js|jsx)$/</span>, use: <span class="string">'babel-loader'</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;template: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
 <p>webpack提供了很多插入即用的插件！可以查看我们的 <a href="https://webpack.js.org/plugins/" target="_blank" rel="external">插件列表</a> 以获取更多信息。</p>
