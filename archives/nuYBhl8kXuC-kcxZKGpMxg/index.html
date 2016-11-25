@@ -96,7 +96,7 @@
 <meta property="og:description" content="原文链接：https://webpack.js.org/concepts/
 概念webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有惊人的可配置性，不过，在使用之前我们觉得你必须理解四个核心的概念。
 作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。">
-<meta property="og:updated_time" content="2016-11-25T07:36:25.000Z">
+<meta property="og:updated_time" content="2016-11-25T07:44:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack中文文档（一）：四个核心概念">
 <meta name="twitter:description" content="原文链接：https://webpack.js.org/concepts/
@@ -408,7 +408,7 @@
 <p>作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。</p>
 <a id="more"></a>
 <h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>webpack会根据你的应用的依赖关系创建一张图。这张图的起点被视为入口。入口告诉webpack从哪里开始，以及按照依赖关系图如何去打包。你可以将你的应用的入口看做是上下文根节点或者访问你的应用的第一个文件。</p>
-<p>在webpack中，我们通过在 <a href="https://webpack.js.org/configuration/" target="_blank" rel="external">webpack配置对象</a> 中使用 <strong>entry</strong> 属性定义入口。</p>
+<p>在webpack中，我们通过在 <a href="https://webpack.js.org/configuration/" target="_blank" rel="external">webpack配置对象</a> 中使用 <code>entry</code> 属性定义入口。</p>
 <p>下面是一个最简单的例子：</p>
 <p>webpack.config.js</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>

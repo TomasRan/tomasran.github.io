@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-11-25T07:36:25.000Z</updated>
+  <updated>2016-11-25T07:44:19.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
     <id>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</id>
     <published>2016-11-25T06:41:41.000Z</published>
-    <updated>2016-11-25T07:36:25.000Z</updated>
+    <updated>2016-11-25T07:44:19.000Z</updated>
     
     <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
 &lt;p&gt;作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;入口&quot;&gt;&lt;a href=&quot;#入口&quot; class=&quot;headerlink&quot; title=&quot;入口&quot;&gt;&lt;/a&gt;入口&lt;/h3&gt;&lt;p&gt;webpack会根据你的应用的依赖关系创建一张图。这张图的起点被视为入口。入口告诉webpack从哪里开始，以及按照依赖关系图如何去打包。你可以将你的应用的入口看做是上下文根节点或者访问你的应用的第一个文件。&lt;/p&gt;
-&lt;p&gt;在webpack中，我们通过在 &lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack配置对象&lt;/a&gt; 中使用 &lt;strong&gt;entry&lt;/strong&gt; 属性定义入口。&lt;/p&gt;
+&lt;p&gt;在webpack中，我们通过在 &lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack配置对象&lt;/a&gt; 中使用 &lt;code&gt;entry&lt;/code&gt; 属性定义入口。&lt;/p&gt;
 &lt;p&gt;下面是一个最简单的例子：&lt;/p&gt;
 &lt;p&gt;webpack.config.js&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: &lt;span class=&quot;string&quot;&gt;&#39;./path/to/my/entry/file.js&#39;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
