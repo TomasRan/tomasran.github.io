@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="tomasran, blog" />
+  <meta name="keywords" content="webpack,webpack中文文档," />
 
 
 
@@ -86,15 +86,22 @@
 
 
 
-<meta name="description" content="天涯路远，人生路长">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The World of TomasRan">
-<meta property="og:url" content="tomasran.space/tags/Cyclomatic-Complexity/index.html">
+<meta name="description" content="原文链接：https://webpack.js.org/concepts/
+概念webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有惊人的可配置性，不过，在使用之前我们觉得你必须理解四个核心的概念。
+作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack中文文档（一）：四个核心概念">
+<meta property="og:url" content="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/index.html">
 <meta property="og:site_name" content="The World of TomasRan">
-<meta property="og:description" content="天涯路远，人生路长">
+<meta property="og:description" content="原文链接：https://webpack.js.org/concepts/
+概念webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有惊人的可配置性，不过，在使用之前我们觉得你必须理解四个核心的概念。
+作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。">
+<meta property="og:updated_time" content="2016-11-25T06:43:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The World of TomasRan">
-<meta name="twitter:description" content="天涯路远，人生路长">
+<meta name="twitter:title" content="webpack中文文档（一）：四个核心概念">
+<meta name="twitter:description" content="原文链接：https://webpack.js.org/concepts/
+概念webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有惊人的可配置性，不过，在使用之前我们觉得你必须理解四个核心的概念。
+作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。">
 
 
 
@@ -122,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="tomasran.space/tags/Cyclomatic-Complexity/"/>
+  <link rel="canonical" href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
 
 
 
 
 
-  <title> 标签: Cyclomatic Complexity | The World of TomasRan </title>
+  <title> webpack中文文档（一）：四个核心概念 | The World of TomasRan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +166,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,53 +289,298 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Cyclomatic Complexity
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TomasRan">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://o6lqh5p0j.bkt.clouddn.com/10016040.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="The World of TomasRan">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="The World of TomasRan" src="">
+    </span>
+  </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                webpack中文文档（一）：四个核心概念
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-25T14:41:41+08:00">
+                2016-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/Translate/" itemprop="url" rel="index">
+                    <span itemprop="name">Translate</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/archives/nuYBhl8kXuC-kcxZKGpMxg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="archives/nuYBhl8kXuC-kcxZKGpMxg/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+		  
+			<span>&nbsp; | &nbsp;
+			<span id="busuanzi_value_page_pv" ></span>次阅读
+			</span>    
+		  
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>原文链接：<a href="https://webpack.js.org/concepts/" target="_blank" rel="external">https://webpack.js.org/concepts/</a></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有<a href="https://webpack.js.org/configuration/" target="_blank" rel="external">惊人的可配置性</a>，不过，在使用之前我们觉得你必须理解四个核心的概念。</p>
+<p>作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。</p>
+<a id="more"></a>
+<h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>webpack会根据你的应用的依赖关系创建一张图。这张图的起点被视为入口。入口告诉webpack从哪里开始，以及按照依赖关系图如何去打包。你可以将你的应用的入口看做是上下文根节点或者访问你的应用的第一个文件。</p>
+<p>在webpack中，我们通过在 <a href="https://webpack.js.org/configuration/" target="_blank" rel="external">webpack配置对象</a> 中使用 <code>entry</code> 属性定义入口。</p>
+<p>下面是一个最简单的例子：</p>
+<p>webpack.config.js</p>
+<pre><code>module.exports = {
+    entry: &apos;./path/to/my/entry/file.js&apos; 
+};
+</code></pre><p>根据你的应用的需求，可以有多种方法去声明入口。</p>
+<p><a href="https://webpack.js.org/concepts/entry-points/" target="_blank" rel="external">了解更多！</a></p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpacl的 <code>ouput</code> 属性描述了webpack如何去处理打包后的代码。</p>
+<p>webpack.config.js</p>
+<pre><code>module.exports = {
+    entry: &apos;./path/to/my/entry/file.js&apos;,
+    output: {
+        path: path.resolve(__dirname, &apos;dist&apos;),
+        filename: &apos;my-first-webpack.bundle.js&apos;
+    }
+};
+</code></pre><p>上面的例子，通过我们定义的 <code>output.filename</code> 和 <code>ouput.path</code> 属性去命名我们的包以及确定我们想要将它放置的位置。</p>
+<p><code>ouput</code> 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 <code>output</code> 属性更为通用的配置用例。</p>
+<p><a href="https://webpack.js.org/concepts/output/" target="_blank" rel="external">了解更多！</a></p>
+<h3 id="加载器"><a href="#加载器" class="headerlink" title="加载器"></a>加载器</h3><p>目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 <a href="https://webpack.js.org/concepts/modules/" target="_blank" rel="external">每一个文件（.css，.html，scss，.jpg，etc）视为一个模块</a>。然而，webpack<br><strong>只能理解Javascript代码</strong>。</p>
+<p><strong>当将资源文件添加到你的依赖图中时，webpack中的加载器会将涉及的所有文件统统转化成为模块。</strong></p>
+<p>从高层次上来讲，你的webpack配置主要有两个目的：</p>
+<ol>
+<li>通过特定的加载器识别需要进行转换的文件。（<code>test</code> 属性）</li>
+<li>将文件进行装换以便于它能够被添加到你的依赖图中（最终添加到你的包中）。（<code>use</code> 属性）</li>
+</ol>
+<p>webpack.config.js</p>
+<pre><code>const config = {
+    entry: &apos;./path/to/my/entry/file.js&apos;,
+    output: {
+        path: path.resolve(__dirname, &apos;dist&apos;),
+        filename: &apos;my-first-webpack.bundle.js&apos;
+    },
+    module: {
+        rules: [
+            {test: /\.(js|jsx)$/, use: &apos;babel-loader&apos;}
+        ]
+    }
+};
+</code></pre><p>上面的配置中我们定义了使用加载器的规则，设置了它的两个必须属性：<code>test</code> 和 <code>use</code> 。它告诉webpack编译器下面的事情：</p>
+<blockquote>
+<p> “webpack编译器，当你在分析 <code>require()/import</code> 声明中的路径时，遇到了 ‘.js’ 或者 ‘.jsx’文件，则在将它添加到打包结果之前，使用 <code>babel-loader</code> 去将它转换为模块。”</p>
+</blockquote>
+<p>当在你的webpack配置中定义规则时，需要切记你应该在 <code>module.rules</code> 下面进行定义，而不是 <code>rules</code>。不过如果你采用了错误的方式webpack也会发出提醒。</p>
+<p>关于加载器还有很多我们没有谈及的特定属性可以进行定义。</p>
+<p><a href="https://webpack.js.org/concepts/loaders/" target="_blank" rel="external">了解更多！</a></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>加载器是基于每个文件执行转换，而<code>plugins</code> 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（<a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">或者更多</a>）。webpakc的插件系统<a href="https://webpack.js.org/api/plugins/" target="_blank" rel="external">十分强大并且可定制</a>。</p>
+<p>为了使用一个插件，你只需要 <code>require（）</code> 它并且将它添加到 <code>plugins</code> 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 <code>new</code> 去初始化该插件的实例。</p>
+<p>webpack.config.js</p>
+<pre><code>const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;); //installed via npm
+const webpack = require(&apos;webpack&apos;); //to access built-in plugins
 
-      <h1 class="post-title">
+const config = {
+    entry: &apos;./path/to/my/entry/file.js&apos;,
+    output: {
+        filename: &apos;my-first-webpack.bundle.js&apos;,
+        path: &apos;./dist&apos;
+    },
+    module: {
+        rules: [
+            {test: /\.(js|jsx)$/, use: &apos;babel-loader&apos;}
+        ]
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
+        new HtmlWebpackPlugin({template: &apos;./src/index.html&apos;})
+    ]
+};
+
+module.exports = config;
+</code></pre><p>webpack提供了很多插入即用的插件！可以查看我们的 <a href="https://webpack.js.org/plugins/" target="_blank" rel="external">插件列表</a> 以获取更多信息。</p>
+<p>在你的webpack配置中使用插件相当轻松，然而有很多的用例更值得进一步讨论。</p>
+<p><a href="https://webpack.js.org/concepts/plugins/" target="_blank" rel="external">了解更多！</a></p>
+
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/archives/0JIUXRpCu91_D8gPSbCI3g/" itemprop="url">
-              
-                <span itemprop="name">关注代码中的圈复杂度</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-02T08:55:35+08:00"
-              content="2016-07-02" >
-          07-02
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+            <a href="/tags/webpack中文文档/" rel="tag"># webpack中文文档</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/byiEkaZXckBFPR1ZhtuusA/" rel="next" title="项目总结：Okay教育智慧平台v1.7.0.1">
+                <i class="fa fa-chevron-left"></i> 项目总结：Okay教育智慧平台v1.7.0.1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+		<! -- 添加微信图标 -->
+		    
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="archives/nuYBhl8kXuC-kcxZKGpMxg/"
+     data-title="webpack中文文档（一）：四个核心概念"
+     data-content=""
+     data-url="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="archives/nuYBhl8kXuC-kcxZKGpMxg/"
+           data-title="webpack中文文档（一）：四个核心概念" data-url="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -348,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://o6lqh5p0j.bkt.clouddn.com/10016040.jpeg"
@@ -461,6 +722,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#入口"><span class="nav-number">1.1.</span> <span class="nav-text">入口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载器"><span class="nav-number">1.3.</span> <span class="nav-text">加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">1.4.</span> <span class="nav-text">插件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -549,6 +826,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

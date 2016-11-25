@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-11-22T02:40:34.000Z</updated>
+  <updated>2016-11-25T06:43:45.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -14,6 +14,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack中文文档（一）：四个核心概念</title>
+    <link href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
+    <id>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</id>
+    <published>2016-11-25T06:41:41.000Z</published>
+    <updated>2016-11-25T06:43:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
+&lt;p&gt;作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;入口&quot;&gt;&lt;a href=&quot;#入口&quot; class=&quot;headerlink&quot; title=&quot;入口&quot;&gt;&lt;/a&gt;入口&lt;/h3&gt;&lt;p&gt;webpack会根据你的应用的依赖关系创建一张图。这张图的起点被视为入口。入口告诉webpack从哪里开始，以及按照依赖关系图如何去打包。你可以将你的应用的入口看做是上下文根节点或者访问你的应用的第一个文件。&lt;/p&gt;
+&lt;p&gt;在webpack中，我们通过在 &lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack配置对象&lt;/a&gt; 中使用 &lt;code&gt;entry&lt;/code&gt; 属性定义入口。&lt;/p&gt;
+&lt;p&gt;下面是一个最简单的例子：&lt;/p&gt;
+&lt;p&gt;webpack.config.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = {
+    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos; 
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;根据你的应用的需求，可以有多种方法去声明入口。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/entry-points/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;输出&quot;&gt;&lt;a href=&quot;#输出&quot; class=&quot;headerlink&quot; title=&quot;输出&quot;&gt;&lt;/a&gt;输出&lt;/h3&gt;&lt;p&gt;当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpacl的 &lt;code&gt;ouput&lt;/code&gt; 属性描述了webpack如何去处理打包后的代码。&lt;/p&gt;
+&lt;p&gt;webpack.config.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = {
+    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos;,
+    output: {
+        path: path.resolve(__dirname, &amp;apos;dist&amp;apos;),
+        filename: &amp;apos;my-first-webpack.bundle.js&amp;apos;
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的例子，通过我们定义的 &lt;code&gt;output.filename&lt;/code&gt; 和 &lt;code&gt;ouput.path&lt;/code&gt; 属性去命名我们的包以及确定我们想要将它放置的位置。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ouput&lt;/code&gt; 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 &lt;code&gt;output&lt;/code&gt; 属性更为通用的配置用例。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/output/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;加载器&quot;&gt;&lt;a href=&quot;#加载器&quot; class=&quot;headerlink&quot; title=&quot;加载器&quot;&gt;&lt;/a&gt;加载器&lt;/h3&gt;&lt;p&gt;目标是使得你项目中的所有资源文件成为webpack的关注点，而浏览器无需关心（这并不意味着所有的资源文件都需要一起打包）。webpack 将 &lt;a href=&quot;https://webpack.js.org/concepts/modules/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每一个文件（.css，.html，scss，.jpg，etc）视为一个模块&lt;/a&gt;。然而，webpack&lt;br&gt;&lt;strong&gt;只能理解Javascript代码&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;当将资源文件添加到你的依赖图中时，webpack中的加载器会将涉及的所有文件统统转化成为模块。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从高层次上来讲，你的webpack配置主要有两个目的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过特定的加载器识别需要进行转换的文件。（&lt;code&gt;test&lt;/code&gt; 属性）&lt;/li&gt;
+&lt;li&gt;将文件进行装换以便于它能够被添加到你的依赖图中（最终添加到你的包中）。（&lt;code&gt;use&lt;/code&gt; 属性）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;webpack.config.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const config = {
+    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos;,
+    output: {
+        path: path.resolve(__dirname, &amp;apos;dist&amp;apos;),
+        filename: &amp;apos;my-first-webpack.bundle.js&amp;apos;
+    },
+    module: {
+        rules: [
+            {test: /\.(js|jsx)$/, use: &amp;apos;babel-loader&amp;apos;}
+        ]
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的配置中我们定义了使用加载器的规则，设置了它的两个必须属性：&lt;code&gt;test&lt;/code&gt; 和 &lt;code&gt;use&lt;/code&gt; 。它告诉webpack编译器下面的事情：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; “webpack编译器，当你在分析 &lt;code&gt;require()/import&lt;/code&gt; 声明中的路径时，遇到了 ‘.js’ 或者 ‘.jsx’文件，则在将它添加到打包结果之前，使用 &lt;code&gt;babel-loader&lt;/code&gt; 去将它转换为模块。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当在你的webpack配置中定义规则时，需要切记你应该在 &lt;code&gt;module.rules&lt;/code&gt; 下面进行定义，而不是 &lt;code&gt;rules&lt;/code&gt;。不过如果你采用了错误的方式webpack也会发出提醒。&lt;/p&gt;
+&lt;p&gt;关于加载器还有很多我们没有谈及的特定属性可以进行定义。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/loaders/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h3&gt;&lt;p&gt;加载器是基于每个文件执行转换，而&lt;code&gt;plugins&lt;/code&gt; 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（&lt;a href=&quot;https://webpack.js.org/concepts/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;或者更多&lt;/a&gt;）。webpakc的插件系统&lt;a href=&quot;https://webpack.js.org/api/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;十分强大并且可定制&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;为了使用一个插件，你只需要 &lt;code&gt;require（）&lt;/code&gt; 它并且将它添加到 &lt;code&gt;plugins&lt;/code&gt; 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 &lt;code&gt;new&lt;/code&gt; 去初始化该插件的实例。&lt;/p&gt;
+&lt;p&gt;webpack.config.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const HtmlWebpackPlugin = require(&amp;apos;html-webpack-plugin&amp;apos;); //installed via npm
+const webpack = require(&amp;apos;webpack&amp;apos;); //to access built-in plugins
+
+const config = {
+    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos;,
+    output: {
+        filename: &amp;apos;my-first-webpack.bundle.js&amp;apos;,
+        path: &amp;apos;./dist&amp;apos;
+    },
+    module: {
+        rules: [
+            {test: /\.(js|jsx)$/, use: &amp;apos;babel-loader&amp;apos;}
+        ]
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
+        new HtmlWebpackPlugin({template: &amp;apos;./src/index.html&amp;apos;})
+    ]
+};
+
+module.exports = config;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;webpack提供了很多插入即用的插件！可以查看我们的 &lt;a href=&quot;https://webpack.js.org/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;插件列表&lt;/a&gt; 以获取更多信息。&lt;/p&gt;
+&lt;p&gt;在你的webpack配置中使用插件相当轻松，然而有很多的用例更值得进一步讨论。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
+&lt;p&gt;作为webpack学习之旅的一部分，我们撰写这篇文档旨在给大家展示这些概念的高度概览，不过我们也会提供特和概念相关的特定用例的链接。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Translate" scheme="tomasran.space/category/Translate/"/>
+    
+    
+      <category term="webpack" scheme="tomasran.space/tags/webpack/"/>
+    
+      <category term="webpack中文文档" scheme="tomasran.space/tags/webpack%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>项目总结：Okay教育智慧平台v1.7.0.1</title>
