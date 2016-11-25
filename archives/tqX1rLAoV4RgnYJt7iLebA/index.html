@@ -415,15 +415,15 @@
 <h2 id="事件目标"><a href="#事件目标" class="headerlink" title="事件目标"></a>事件目标</h2><p>事件目标是发生事件的对象或者是与该事件相关的对象。</p>
 <p>确定了事件类型，我们知道需要响应什么样的事件。但是，网页元素那么多，让每一个元素都响应该事件显然是不合理的。既然如此，我们就需要确定响应事件的目标。它可以是一个button，一个div，一个input框，或者整个文档，事件目标的确定自然依赖于需求。</p>
 <h2 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h2><p>事件处理程序是事件目标在响应指定的事件类型时需要执行的程序。看看如下代码：</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xxx.onclick = <span class="function"><span class="keyword">function</span><span class="params">(e)</span></span> &#123;</span><br><span class="line">  e = e || window.event;</span><br><span class="line">  e.<span class="keyword">target</span> = e.<span class="keyword">target</span> || e.srcElement;</span><br><span class="line">  ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight fortran"><table><tr><td class="code"><pre><span class="line">xxx.onclick = <span class="function"><span class="keyword">function</span><span class="params">(e)</span></span> &#123;</span><br><span class="line">  e = e || window.event;</span><br><span class="line">  e.<span class="keyword">target</span> = e.<span class="keyword">target</span> || e.srcElement;</span><br><span class="line">  ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>后面的function声明的函数就是我们的事件处理程序。我们经常会看到以上函数声明，前两句和具体的业务逻辑并没有什么联系，它们的作用是为了解决浏览器兼容性问题。如果要探究其意义的话，我们自然要先弄清楚事件处理函数中传入的参数‘e’代表什么。</p>
 <p>注意，这不是error的简写！而是事件对象。</p>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>事件对象是什么？事件对象是与特定信息相关并且包含有关该事件详细信息的对象。<br><br>什么时候产生？当事件触发时生成，并传递给相应的事件处理函数。<br><br>什么时候销毁？当事件处理函数执行完立即销毁。<br></p>
 <p>事件对象包含很多的属性，例如触发这个事件的事件目标 ‘target’，事件的类型 ‘type’ 等等，想要了解事件对象的具体属性可以参见 <a href="http://www.w3school.com.cn/jsref/dom_obj_event.asp" target="_blank" rel="external">W3C Event对象</a>。</p>
 <p>一般情况下，事件对象都会传递给事件处理函数，但总有浏览器别出心裁，例如IE8及其之前版本，它们不会在事件触发时生成一个单独的事件对象传递给事件处理函数，取而代之，它们采用了全局变量的方法，通过绑定在Window对象上的全局变量event来访问事件对象的属性，并且只有在事件处理函数执行的时候才能访问到这个对象，也就是说，window.event在一般情况下是访问不到的（看上去是事件处理函数执行时给全局变量添加了event属性，执行完之后删除，未研究源码，臆测）。因此为了解决浏览器兼容性的问题，就有了上文中的这一段代码：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">e</span> = e || window.event</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">e</span> = e || window.event</span><br></pre></td></tr></table></figure>
 <p>事实上，IE中的event对象和其他浏览器的事件对象还有很多的属性差别。例如IE的event对象就没有target这一属性，而它的srcElement与其拥有同样的属性值。这样，也就催生出上文中的第二段代码：</p>
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.<span class="keyword">target</span> = e.<span class="keyword">target</span> || e.srcElement</span><br></pre></td></tr></table></figure>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line">e.<span class="keyword">target</span> = e.<span class="keyword">target</span> || e.srcElement</span><br></pre></td></tr></table></figure>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上是Javascript事件机制中的几个基本的概念，到目前为止，我们并没有为它们建立彼此之间的联系，先混个脸熟，之后再介绍具体的运作机制。</p>
 
       

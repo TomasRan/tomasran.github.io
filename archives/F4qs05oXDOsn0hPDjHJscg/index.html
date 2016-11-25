@@ -402,7 +402,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_civxflg2d000iol02abaoc6xe"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_civxfur6m000juz0279urxduo"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" itemprop="contentUrl"/>
               </a>
@@ -477,15 +477,15 @@
 <h5 id="来看一个栗子"><a href="#来看一个栗子" class="headerlink" title="来看一个栗子"></a>来看一个栗子</h5><p>看到以上计算方法是否能够豁然开朗呢？至少知道了高代理码点和低代理码点的由来和这样称呼的原因吧。现在就通过一个例子来清晰这个计算过程：</p>
 <p>假设现在我们需要将Unicode字符集中的 “U+1CCCC” 进行编码，计算过程：</p>
 <p>步骤一：减去0x10000 </p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0x1CCCC</span> - <span class="number">0x10000</span> = <span class="number">0xCCCC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="number">0x1CCCC</span> - <span class="number">0x10000</span> = <span class="number">0xCCCC</span></span><br></pre></td></tr></table></figure>
 <p>步骤二：划分高低位</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>xCCCC的二进制形式：<span class="number">0000 1100</span> <span class="number">1100 1100</span> <span class="number">1100</span> </span><br><span class="line">高<span class="number">10</span>位：<span class="number">00</span> <span class="number">0011 0011</span>  =&gt;  <span class="number">0</span>x33</span><br><span class="line">低<span class="number">10</span>位：<span class="number">00</span> <span class="number">1100 1100</span>  =&gt;  <span class="number">0</span>xCC</span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">0</span>xCCCC的二进制形式：<span class="number">0000 1100</span> <span class="number">1100 1100</span> <span class="number">1100</span> </span><br><span class="line">高<span class="number">10</span>位：<span class="number">00</span> <span class="number">0011 0011</span>  =&gt;  <span class="number">0</span>x33</span><br><span class="line">低<span class="number">10</span>位：<span class="number">00</span> <span class="number">1100 1100</span>  =&gt;  <span class="number">0</span>xCC</span><br></pre></td></tr></table></figure>
 <p>步骤三：计算高位</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0x33</span> + <span class="number">0xD800</span> = <span class="number">0xD833</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="number">0x33</span> + <span class="number">0xD800</span> = <span class="number">0xD833</span></span><br></pre></td></tr></table></figure>
 <p>步骤四：计算低位</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0xCC</span> + <span class="number">0xDC00</span> = <span class="number">0xDCCC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line"><span class="number">0xCC</span> + <span class="number">0xDC00</span> = <span class="number">0xDCCC</span></span><br></pre></td></tr></table></figure>
 <p>步骤五：组合</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">该字符的UTF-<span class="number">16</span>编码即 <span class="number">0</span>xD833 <span class="number">0</span>xDCCC</span><br><span class="line">转化为二进制：<span class="number">1101 1000</span> <span class="number">0011 0011</span> <span class="number">1101 1100</span> <span class="number">1100 1100</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">该字符的UTF-<span class="number">16</span>编码即 <span class="number">0</span>xD833 <span class="number">0</span>xDCCC</span><br><span class="line">转化为二进制：<span class="number">1101 1000</span> <span class="number">0011 0011</span> <span class="number">1101 1100</span> <span class="number">1100 1100</span></span><br></pre></td></tr></table></figure>
 <p>这样就完成了字符 “U+1CCCC”的UTF-16编码过程。</p>
 <h5 id="寻找理论依据"><a href="#寻找理论依据" class="headerlink" title="寻找理论依据"></a>寻找理论依据</h5><p>被莫名其妙地灌输了一套计算体系，UTF-16这种编码方式的理论依据是什么呢？我们再明确一下，编码方案实际上是建立字符集中的所有字符和二进制流的一一映射关系（需要明确一下一一映射的概念？ 一一映射也称作 <a href="https://zh.wikipedia.org/wiki/%E5%8F%8C%E5%B0%84" target="_blank" rel="external">双射</a>）。</p>
 <p>那么接下来我们就分析一下UTF-16是否满足了这样的条件。</p>
@@ -569,11 +569,11 @@
 </blockquote>
 <h4 id="吃栗子比较容易消化"><a href="#吃栗子比较容易消化" class="headerlink" title="吃栗子比较容易消化"></a>吃栗子比较容易消化</h4><p>例如带上圆圈和锐音符的拉丁文大写字母 Ǻ 的Unicode字符编号为U+01FA，根据上述方法的计算过程如下：</p>
 <p>步骤一：确定区间</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U+01FA 落在区间 <span class="number">0x0080</span> ~ <span class="number">0x07FF</span>，因此编码值为 110yyyyy 10yyyyyy，共<span class="number">11</span>个未知数</span><br></pre></td></tr></table></figure>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">U+01FA 落在区间 <span class="number">0x0080</span> ~ <span class="number">0x07FF</span>，因此编码值为 110yyyyy 10yyyyyy，共<span class="number">11</span>个未知数</span><br></pre></td></tr></table></figure>
 <p>步骤二：Unicode字符编码二进制化</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U+<span class="number">01</span>FA 的二进制形式为 <span class="number">0000 0001</span> <span class="number">1111 1010</span>，从低位开始向上截取<span class="number">11</span>位得到： <span class="number">001 1111</span> <span class="number">1010</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">U+<span class="number">01</span>FA 的二进制形式为 <span class="number">0000 0001</span> <span class="number">1111 1010</span>，从低位开始向上截取<span class="number">11</span>位得到： <span class="number">001 1111</span> <span class="number">1010</span></span><br></pre></td></tr></table></figure>
 <p>步骤三：按顺序依次填充</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将上步的二进制结果按顺序替换y，则得到编码结果： <span class="number">11000111</span> <span class="number">10111010</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">将上步的二进制结果按顺序替换y，则得到编码结果： <span class="number">11000111</span> <span class="number">10111010</span></span><br></pre></td></tr></table></figure>
 <h4 id="UTF-8编码的优势"><a href="#UTF-8编码的优势" class="headerlink" title="UTF-8编码的优势"></a>UTF-8编码的优势</h4><p>技术领域的流行都有着看上去足够理智的原因：</p>
 <ol>
 <li>完美兼容ASCII码编码方案，这意味着以前的ASCII码文本不需要做任何转换就可以被UTF-8理解以及编码。</li>
