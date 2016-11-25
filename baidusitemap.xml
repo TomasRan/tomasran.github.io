@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>tomasran.space/archives/tqX1rLAoV4RgnYJt7iLebA/</loc>
+    <lastmod>2016-11-25T07:38:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器事件机制的几个基本概念</title>
+        <pubTime>2016-03-31T16:30:38.000Z</pubTime>
+        
+        <tag>事件类型</tag>
+         
+        <tag>事件目标</tag>
+         
+        <tag>事件对象</tag>
+         
+        <tag>事件处理程序</tag>
+         
+         
+           
+             
+              <breadCrumb title="BOM" url="tomasran.space/category/BOM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</loc>
     <lastmod>2016-11-25T07:36:25.000Z</lastmod>
     <data>
@@ -132,32 +158,6 @@
            
              
               <breadCrumb title="CSS" url="tomasran.space/category/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>tomasran.space/archives/tqX1rLAoV4RgnYJt7iLebA/</loc>
-    <lastmod>2016-07-04T16:32:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>浏览器事件机制的几个基本概念</title>
-        <pubTime>2016-03-31T16:30:38.000Z</pubTime>
-        
-        <tag>事件类型</tag>
-         
-        <tag>事件目标</tag>
-         
-        <tag>事件对象</tag>
-         
-        <tag>事件处理程序</tag>
-         
-         
-           
-             
-              <breadCrumb title="client-side-programming" url="tomasran.space/category/client-side-programming/"/>
           
         </display>
     </data>
