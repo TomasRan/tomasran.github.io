@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-11-25T06:49:04.000Z</updated>
+  <updated>2016-11-25T06:55:23.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
     <id>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</id>
     <published>2016-11-25T06:41:41.000Z</published>
-    <updated>2016-11-25T06:49:04.000Z</updated>
+    <updated>2016-11-25T06:55:23.000Z</updated>
     
     <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/entry-points/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;输出&quot;&gt;&lt;a href=&quot;#输出&quot; class=&quot;headerlink&quot; title=&quot;输出&quot;&gt;&lt;/a&gt;输出&lt;/h3&gt;&lt;p&gt;当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpacl的 &lt;code&gt;ouput&lt;/code&gt; 属性描述了webpack如何去处理打包后的代码。&lt;/p&gt;
 &lt;p&gt;webpack.config.js&lt;/p&gt;
-&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: &#39;./path/&lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt;/&lt;span class=&quot;keyword&quot;&gt;my&lt;/span&gt;/entry/&lt;span class=&quot;built_in&quot;&gt;file&lt;/span&gt;.js&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  output: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: path.resolve(__dirname, &#39;dist&#39;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filename: &#39;&lt;span class=&quot;keyword&quot;&gt;my&lt;/span&gt;-&lt;span class=&quot;keyword&quot;&gt;first&lt;/span&gt;-webpack.bundle.js&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: &lt;span class=&quot;string&quot;&gt;&#39;./path/to/my/entry/file.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  output: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: path.resolve(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;dist&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filename: &lt;span class=&quot;string&quot;&gt;&#39;my-first-webpack.bundle.js&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上面的例子，通过我们定义的 &lt;code&gt;output.filename&lt;/code&gt; 和 &lt;code&gt;ouput.path&lt;/code&gt; 属性去命名我们的包以及确定我们想要将它放置的位置。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ouput&lt;/code&gt; 属性拥有很多的配置功能，但是我们还是应该花一些时间去理解 &lt;code&gt;output&lt;/code&gt; 属性更为通用的配置用例。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/output/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
