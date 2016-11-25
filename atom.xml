@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2016-11-25T07:00:11.000Z</updated>
+  <updated>2016-11-25T07:09:00.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/"/>
     <id>tomasran.space/archives/nuYBhl8kXuC-kcxZKGpMxg/</id>
     <published>2016-11-25T06:41:41.000Z</published>
-    <updated>2016-11-25T07:00:11.000Z</updated>
+    <updated>2016-11-25T07:09:00.000Z</updated>
     
     <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;https://webpack.js.org/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://webpack.js.org/concepts/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;webpack是为了现代Javascript应用而诞生的一个模块打包器。它拥有&lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;惊人的可配置性&lt;/a&gt;，不过，在使用之前我们觉得你必须理解四个核心的概念。&lt;/p&gt;
@@ -30,10 +30,8 @@
 &lt;p&gt;在webpack中，我们通过在 &lt;a href=&quot;https://webpack.js.org/configuration/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack配置对象&lt;/a&gt; 中使用 &lt;code&gt;entry&lt;/code&gt; 属性定义入口。&lt;/p&gt;
 &lt;p&gt;下面是一个最简单的例子：&lt;/p&gt;
 &lt;p&gt;webpack.config.js&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;module.exports = {
-    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos; 
-};
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;根据你的应用的需求，可以有多种方法去声明入口。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: &lt;span class=&quot;string&quot;&gt;&#39;./path/to/my/entry/file.js&#39;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;根据你的应用的需求，可以有多种方法去声明入口。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/entry-points/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;输出&quot;&gt;&lt;a href=&quot;#输出&quot; class=&quot;headerlink&quot; title=&quot;输出&quot;&gt;&lt;/a&gt;输出&lt;/h3&gt;&lt;p&gt;当你打包完了所有的资源文件，我们仍然需要告诉webpack哪里去放置我们的应用。webpacl的 &lt;code&gt;ouput&lt;/code&gt; 属性描述了webpack如何去处理打包后的代码。&lt;/p&gt;
 &lt;p&gt;webpack.config.js&lt;/p&gt;
@@ -60,28 +58,8 @@
 &lt;h3 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h3&gt;&lt;p&gt;加载器是基于每个文件执行转换，而&lt;code&gt;plugins&lt;/code&gt; 一般用来（但不局限于）在你的已经打包好的模块的“编译”或是“分块”    期间执行一些操作和自定义的功能（&lt;a href=&quot;https://webpack.js.org/concepts/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;或者更多&lt;/a&gt;）。webpakc的插件系统&lt;a href=&quot;https://webpack.js.org/api/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;十分强大并且可定制&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;为了使用一个插件，你只需要 &lt;code&gt;require（）&lt;/code&gt; 它并且将它添加到 &lt;code&gt;plugins&lt;/code&gt; 数组。大多数的插件都是可以通过参数进行定制的。因为你可以根据不同目的在同一配置文件中多次使用同一个插件，所以你需要使用 &lt;code&gt;new&lt;/code&gt; 去初始化该插件的实例。&lt;/p&gt;
 &lt;p&gt;webpack.config.js&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const HtmlWebpackPlugin = require(&amp;apos;html-webpack-plugin&amp;apos;); //installed via npm
-const webpack = require(&amp;apos;webpack&amp;apos;); //to access built-in plugins
-
-const config = {
-    entry: &amp;apos;./path/to/my/entry/file.js&amp;apos;,
-    output: {
-        filename: &amp;apos;my-first-webpack.bundle.js&amp;apos;,
-        path: &amp;apos;./dist&amp;apos;
-    },
-    module: {
-        rules: [
-            {test: /\.(js|jsx)$/, use: &amp;apos;babel-loader&amp;apos;}
-        ]
-    },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
-        new HtmlWebpackPlugin({template: &amp;apos;./src/index.html&amp;apos;})
-    ]
-};
-
-module.exports = config;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;webpack提供了很多插入即用的插件！可以查看我们的 &lt;a href=&quot;https://webpack.js.org/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;插件列表&lt;/a&gt; 以获取更多信息。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; HtmlWebpackPlugin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;html-webpack-plugin&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//installed via npm&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; webpack = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;webpack&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//to access built-in plugins&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; config = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  entry: &lt;span class=&quot;string&quot;&gt;&#39;./path/to/my/entry/file.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  output: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filename: &lt;span class=&quot;string&quot;&gt;&#39;my-first-webpack.bundle.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    path: &lt;span class=&quot;string&quot;&gt;&#39;./dist&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rules: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#123;test: &lt;span class=&quot;regexp&quot;&gt;/\.(js|jsx)$/&lt;/span&gt;, use: &lt;span class=&quot;string&quot;&gt;&#39;babel-loader&#39;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  plugins: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; webpack.optimize.UglifyJsPlugin(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HtmlWebpackPlugin(&amp;#123;template: &lt;span class=&quot;string&quot;&gt;&#39;./src/index.html&#39;&lt;/span&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = config;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;webpack提供了很多插入即用的插件！可以查看我们的 &lt;a href=&quot;https://webpack.js.org/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;插件列表&lt;/a&gt; 以获取更多信息。&lt;/p&gt;
 &lt;p&gt;在你的webpack配置中使用插件相当轻松，然而有很多的用例更值得进一步讨论。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://webpack.js.org/concepts/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;了解更多！&lt;/a&gt;&lt;/p&gt;
 </content>
