@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2017-02-09T07:25:02.000Z</updated>
+  <updated>2017-04-05T15:32:37.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Immutable.js中文文档</title>
+    <link href="tomasran.space/archives/dsFzdQCcuQr1iO8ubvifYQ/"/>
+    <id>tomasran.space/archives/dsFzdQCcuQr1iO8ubvifYQ/</id>
+    <published>2017-04-05T15:29:58.000Z</published>
+    <updated>2017-04-05T15:32:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;原文链接：&lt;a href=&quot;http://facebook.github.io/immutable-js/docs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://facebook.github.io/immutable-js/docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不可变的数据（Immutable data）鼓励我们使用纯函数（数据输入，数据输出），适用于更简单的应用程序开发，并且启用了函数式编程技术，例如惰性评估。&lt;/p&gt;
+&lt;p&gt;为了将这些强大的函数概念引进Javascript，它提供了一套Javascript工程师熟悉的面向对象的API方法，就好像是Array，Map和Set的镜像方法一般。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;如何阅读这篇文档&quot;&gt;&lt;a href=&quot;#如何阅读这篇文档&quot; class=&quot;headerlink&quot; title=&quot;如何阅读这篇文档&quot;&gt;&lt;/a&gt;如何阅读这篇文档&lt;/h3&gt;&lt;p&gt;为了更好地解释什么样的值是Immutable.js API所期望和生成的，本篇文档将会采用和Javascript类似的一种静态语言进行展示说明（例如 &lt;a href=&quot;https://flowtype.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flow&lt;/a&gt; 和 &lt;a href=&quot;http://www.typescriptlang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TypeScript&lt;/a&gt;）。你不需要使用那些类型检测工具就可以使用 Immutable.js ，只需要熟悉它们的语法就能帮助你更深入地理解这套API。&lt;/p&gt;
+&lt;h4 id=&quot;一些例子以及如何去阅读它们。&quot;&gt;&lt;a href=&quot;#一些例子以及如何去阅读它们。&quot; class=&quot;headerlink&quot; title=&quot;一些例子以及如何去阅读它们。&quot;&gt;&lt;/a&gt;一些例子以及如何去阅读它们。&lt;/h4&gt;&lt;p&gt;所有的方法都会描述它们接受的数据类型和返回的数据类型。举例来说，一个接收两个数字作为参数并且返回一个数字的函数将会是这样的：&lt;/p&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;sum&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;first&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;number&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;second&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;number&lt;/span&gt;) : &lt;span class=&quot;built_in&quot;&gt;number&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;有时，方法可以接受不同的数据类型或者返回不同的数据类型，这是通过一个类型变量进行描述的，这个类型变量往往以典型的全部大写的形式给出。举例来说，一个返回值与接收参数的类型相同的函数看起来是这样的：&lt;/p&gt;
+&lt;figure class=&quot;highlight r&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;identity&amp;lt;&lt;span class=&quot;literal&quot;&gt;T&lt;/span&gt;&amp;gt;(value: &lt;span class=&quot;literal&quot;&gt;T&lt;/span&gt;) : &lt;span class=&quot;literal&quot;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;类型变量用类进行定义并在方法中引用。举个例子，一个持有某个值得类可能看起来是这样的：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Box&lt;/span&gt;&amp;lt;T&amp;gt;;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        constructor(&lt;span class=&quot;symbol&quot;&gt;value:&lt;/span&gt; T)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            getValue(): T&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;为了操作Immutable数据，方法调用不再是我们以前所习惯的影响某个Collection本身，取而代之的是返回一个全新的相同类型的Collection。&lt;code&gt;this&lt;/code&gt; 的类型同一个类的类型。举例来说，当你 &lt;code&gt;push&lt;/code&gt; 一个值到List 类型数据中时，它会返回新的List：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;List&lt;/span&gt;&amp;lt;T&amp;gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        push(&lt;span class=&quot;symbol&quot;&gt;value:&lt;/span&gt; T): this&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Immutable.js 中的很多方法接受实现了Javascript Iterable协议的值，并且对于表示为字符串序列的东西可能会显示为 Iterable&amp;lt;String&amp;gt;。通常在Javascript中当期望使用一个可迭代的对象时，我们会使用数组（[]），然而所有的 Immutable.js 集合都是可以自身迭代的。&lt;/p&gt;
+&lt;p&gt;举个例子，为了在一个数据结构中获得深处的值，我们可能会使用getIn，它期望一个迭代的路径：&lt;/p&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;getIn(path: Iterable&amp;lt;&lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt; | &lt;span class=&quot;built_in&quot;&gt;number&lt;/span&gt;&amp;gt;): &lt;span class=&quot;keyword&quot;&gt;any&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;为了使用这个方法，我们可以传递一个数组： &lt;code&gt;data.getIn([&amp;#39;key&amp;#39;, 2])&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;注意：所有的例子都是使用现代版本的Javascript ES2015 进行展示的。为了在老的浏览器中运行，它们需要被转化为 ES3。&lt;/p&gt;
+&lt;p&gt;举个例子：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ES2015&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; mappedFoo = foo.map(x =&amp;gt; x * x);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ES3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; mappedFoo = foo.map(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x * x; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;API&quot;&gt;&lt;a href=&quot;#API&quot; class=&quot;headerlink&quot; title=&quot;API&quot;&gt;&lt;/a&gt;API&lt;/h4&gt;&lt;h5 id=&quot;fromJS&quot;&gt;&lt;a href=&quot;#fromJS&quot; class=&quot;headerlink&quot; title=&quot;fromJS()&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#fromJS&quot;&gt;fromJS()&lt;/a&gt;&lt;/h5&gt;&lt;h5 id=&quot;is&quot;&gt;&lt;a href=&quot;#is&quot; class=&quot;headerlink&quot; title=&quot;is()&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#is&quot;&gt;is()&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;#####&lt;a href=&quot;#hash&quot;&gt;hash()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isImmutable&quot;&gt;isImmutable()&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isCollection&quot;&gt;isCollection&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isKeyed&quot;&gt;isKeyed&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isIndexed&quot;&gt;isIndexed&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isAssociative&quot;&gt;isAssociative&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isOrdered&quot;&gt;isOrdered&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isValueObject&quot;&gt;isValueObject&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#isCollection&quot;&gt;valueObject&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#List&quot;&gt;List&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Map&quot;&gt;Map&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#OrderedMap&quot;&gt;OrderedMap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Set&quot;&gt;Set&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#OrderedSet&quot;&gt;OrderedSet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Stack&quot;&gt;Stack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Range&quot;&gt;Range&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Repeat&quot;&gt;Repeat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Record&quot;&gt;Record&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Seq&quot;&gt;Seq&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#####&lt;a href=&quot;#Collection&quot;&gt;Collection&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原文链接：&lt;a href=&quot;http://facebook.github.io/immutable-js/docs&quot;&gt;http://facebook.github.io/immutable-js/docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不可变的数据（Immutable data）鼓励我们使用纯函数（数据输入，数据输出），适用于更简单的应用程序开发，并且启用了函数式编程技术，例如惰性评估。&lt;/p&gt;
+&lt;p&gt;为了将这些强大的函数概念引进Javascript，它提供了一套Javascript工程师熟悉的面向对象的API方法，就好像是Array，Map和Set的镜像方法一般。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Translation" scheme="tomasran.space/category/Translation/"/>
+    
+    
+      <category term="Immutable" scheme="tomasran.space/tags/Immutable/"/>
+    
+      <category term="惰性评估" scheme="tomasran.space/tags/%E6%83%B0%E6%80%A7%E8%AF%84%E4%BC%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack中文文档（一）：概念</title>
