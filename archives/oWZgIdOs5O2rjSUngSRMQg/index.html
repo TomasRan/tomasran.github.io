@@ -86,23 +86,17 @@
 
 
 
-<meta name="description" content="XSS攻击简述简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。
-攻击目的XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。
-那么受到攻击有什么危害呢？对用户来讲，比">
+<meta name="description" content="简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web开发的职业素养：拒绝XSS">
 <meta property="og:url" content="tomasran.space/archives/oWZgIdOs5O2rjSUngSRMQg/index.html">
 <meta property="og:site_name" content="The World of TomasRan">
-<meta property="og:description" content="XSS攻击简述简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。
-攻击目的XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。
-那么受到攻击有什么危害呢？对用户来讲，比">
+<meta property="og:description" content="简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。">
 <meta property="og:image" content="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png">
-<meta property="og:updated_time" content="2017-06-02T02:58:36.000Z">
+<meta property="og:updated_time" content="2017-06-02T03:00:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web开发的职业素养：拒绝XSS">
-<meta name="twitter:description" content="XSS攻击简述简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。
-攻击目的XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。
-那么受到攻击有什么危害呢？对用户来讲，比">
+<meta name="twitter:description" content="简介XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。">
 <meta name="twitter:image" content="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png">
 
 
@@ -408,7 +402,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png" rel="gallery_cj3f9gnog000w4p02y3zaowxp"
+                 href="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png" rel="gallery_cj3f9j1m6000r6h02aa2jhfuy"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://o6lqh5p0j.bkt.clouddn.com/cross-site-scripting-my-first-xss-attack.png" itemprop="contentUrl"/>
               </a>
@@ -421,7 +415,8 @@
       
 
       
-        <h3 id="XSS攻击简述"><a href="#XSS攻击简述" class="headerlink" title="XSS攻击简述"></a>XSS攻击简述</h3><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&lt;）。</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&lt;）。</p>
+<a id="more"></a>
 <h4 id="攻击目的"><a href="#攻击目的" class="headerlink" title="攻击目的"></a>攻击目的</h4><p>XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。</p>
 <p>那么受到攻击有什么危害呢？对用户来讲，比较常见的就是受害者网站的cookie、session等敏感数据遭到泄露（这些数据一般保存着用户登陆状态等信息，攻击者拿到这些就可以登陆用户的账号随心所欲的操作）；而对于网站来讲，也许会影响用户体验，包括而不限于可能因此遭到DOS攻击等等。危害性不容小觑。</p>
 <p><img src="http://o6lqh5p0j.bkt.clouddn.com/xss-attack2.png" alt=""></p>
@@ -704,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS攻击简述"><span class="nav-number">1.</span> <span class="nav-text">XSS攻击简述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击目的"><span class="nav-number">2.1.</span> <span class="nav-text">攻击目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在web安全中的地位"><span class="nav-number">2.2.</span> <span class="nav-text">在web安全中的地位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS攻击的类型"><span class="nav-number">3.</span> <span class="nav-text">XSS攻击的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于反射的攻击（非持久化）"><span class="nav-number">3.1.</span> <span class="nav-text">基于反射的攻击（非持久化）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例"><span class="nav-number">3.1.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">3.1.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于存储的攻击"><span class="nav-number">3.2.</span> <span class="nav-text">基于存储的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于DOM的攻击"><span class="nav-number">3.3.</span> <span class="nav-text">基于DOM的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何防御XSS漏洞"><span class="nav-number">4.</span> <span class="nav-text">如何防御XSS漏洞</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击目的"><span class="nav-number">1.1.</span> <span class="nav-text">攻击目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在web安全中的地位"><span class="nav-number">1.2.</span> <span class="nav-text">在web安全中的地位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS攻击的类型"><span class="nav-number">2.</span> <span class="nav-text">XSS攻击的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于反射的攻击（非持久化）"><span class="nav-number">2.1.</span> <span class="nav-text">基于反射的攻击（非持久化）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例"><span class="nav-number">2.1.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结"><span class="nav-number">2.1.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于存储的攻击"><span class="nav-number">2.2.</span> <span class="nav-text">基于存储的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于DOM的攻击"><span class="nav-number">2.3.</span> <span class="nav-text">基于DOM的攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举例-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何防御XSS漏洞"><span class="nav-number">3.</span> <span class="nav-text">如何防御XSS漏洞</span></a></li></ol></div>
             
 
           </div>

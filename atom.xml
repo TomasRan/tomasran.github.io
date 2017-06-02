@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2017-06-02T02:58:36.000Z</updated>
+  <updated>2017-06-02T03:00:55.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="tomasran.space/archives/oWZgIdOs5O2rjSUngSRMQg/"/>
     <id>tomasran.space/archives/oWZgIdOs5O2rjSUngSRMQg/</id>
     <published>2017-06-02T02:48:41.000Z</published>
-    <updated>2017-06-02T02:58:36.000Z</updated>
+    <updated>2017-06-02T03:00:55.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;XSS攻击简述&quot;&gt;&lt;a href=&quot;#XSS攻击简述&quot; class=&quot;headerlink&quot; title=&quot;XSS攻击简述&quot;&gt;&lt;/a&gt;XSS攻击简述&lt;/h3&gt;&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;攻击目的&quot;&gt;&lt;a href=&quot;#攻击目的&quot; class=&quot;headerlink&quot; title=&quot;攻击目的&quot;&gt;&lt;/a&gt;攻击目的&lt;/h4&gt;&lt;p&gt;XSS攻击使用web应用，服务器，或者所依赖的插件系统的已知漏洞进行攻击。攻击者通过一些手段，将一些恶意内容，比如js脚本，插入到受攻击的网站。用户使用浏览器进行访问时就会受到攻击。&lt;/p&gt;
 &lt;p&gt;那么受到攻击有什么危害呢？对用户来讲，比较常见的就是受害者网站的cookie、session等敏感数据遭到泄露（这些数据一般保存着用户登陆状态等信息，攻击者拿到这些就可以登陆用户的账号随心所欲的操作）；而对于网站来讲，也许会影响用户体验，包括而不限于可能因此遭到DOS攻击等等。危害性不容小觑。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://o6lqh5p0j.bkt.clouddn.com/xss-attack2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -62,7 +63,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;XSS攻击简述&quot;&gt;&lt;a href=&quot;#XSS攻击简述&quot; class=&quot;headerlink&quot; title=&quot;XSS攻击简述&quot;&gt;&lt;/a&gt;XSS攻击简述&lt;/h3&gt;&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简
+      &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;XSS攻击的全称是 Cross Site Scripting（跨站脚本攻击），为了避免和样式表CSS混淆而简写为XSS（既生瑜何生亮 :&amp;lt;）。&lt;/p&gt;
     
     </summary>
     
