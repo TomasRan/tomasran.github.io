@@ -587,9 +587,9 @@
     <link href="tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/"/>
     <id>tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/</id>
     <published>2016-11-21T07:55:12.000Z</published>
-    <updated>2017-07-02T02:15:20.000Z</updated>
+    <updated>2017-07-02T02:17:32.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：&lt;/p&gt;
 &lt;h4 id=&quot;函数式编程不可或缺&quot;&gt;&lt;a href=&quot;#函数式编程不可或缺&quot; class=&quot;headerlink&quot; title=&quot;函数式编程不可或缺&quot;&gt;&lt;/a&gt;函数式编程不可或缺&lt;/h4&gt;&lt;p&gt;Javascript是一门支持函数式编程的语言，当然这不是确立函数至尊地位的关键因素，毕竟支持函数式编程的语言不胜枚举。不过很明显，这种编程思想的核心是函数，举足轻重。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h4 id=&quot;面向对象编程的依赖&quot;&gt;&lt;a href=&quot;#面向对象编程的依赖&quot; class=&quot;headerlink&quot; title=&quot;面向对象编程的依赖&quot;&gt;&lt;/a&gt;面向对象编程的依赖&lt;/h4&gt;&lt;p&gt;Javascript使用构造函数实现传统面向对象语言类的概念，构造函数与普通函数并没有任何区别，只是在命名上按照面向对象语言的习惯，统一使用大驼峰形式。&lt;/p&gt;
@@ -623,7 +623,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：&lt;/p&gt;
+      &lt;h3 id=&quot;函数之重，重于泰山&quot;&gt;&lt;a href=&quot;#函数之重，重于泰山&quot; class=&quot;headerlink&quot; title=&quot;函数之重，重于泰山&quot;&gt;&lt;/a&gt;函数之重，重于泰山&lt;/h3&gt;&lt;p&gt;在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：&lt;/p&gt;
 &lt;h4 id=&quot;函数式编程不可或缺&quot;&gt;&lt;a href=&quot;#函数式编程不可或缺&quot; class=&quot;headerlink&quot; title=&quot;函数式编程不可或缺&quot;&gt;&lt;/a&gt;函数式编程不可或缺&lt;/h4&gt;&lt;p&gt;Javascript是一门支持函数式编程的语言，当然这不是确立函数至尊地位的关键因素，毕竟支持函数式编程的语言不胜枚举。不过很明显，这种编程思想的核心是函数，举足轻重。&lt;/p&gt;
     
     </summary>
