@@ -95,7 +95,7 @@
 <meta property="og:description" content="函数之重，重于泰山人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：
 函数式编程不可或缺Javascript是一门支持函数式编程的语言，当然这不是确立函数至尊地位的关键因素，毕竟支持函数式编程的语言不胜枚举。不过很明显，这种编程思想的核心是函数，举足轻重。">
 <meta property="og:image" content="http://o6lqh5p0j.bkt.clouddn.com/functional-javascript-programming-1.png">
-<meta property="og:updated_time" content="2016-11-25T07:33:20.000Z">
+<meta property="og:updated_time" content="2017-07-02T02:15:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript函数相关">
 <meta name="twitter:description" content="函数之重，重于泰山人说：在Javascript中函数是一等公民。地为之重，可见一斑。那么它应该是有一些过人之处：
@@ -416,7 +416,7 @@
 <a id="more"></a>
 <h4 id="面向对象编程的依赖"><a href="#面向对象编程的依赖" class="headerlink" title="面向对象编程的依赖"></a>面向对象编程的依赖</h4><p>Javascript使用构造函数实现传统面向对象语言类的概念，构造函数与普通函数并没有任何区别，只是在命名上按照面向对象语言的习惯，统一使用大驼峰形式。</p>
 <h4 id="函数声明优先级更高"><a href="#函数声明优先级更高" class="headerlink" title="函数声明优先级更高"></a>函数声明优先级更高</h4><p>变量提升时函数声明会覆盖同名的变量，函数声明的优先级高于变量，待遇优厚。比如下面这段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="number">3</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> fn = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> fn);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fn;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> fn;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> fn);</span><br></pre></td></tr></table></figure>
 <p>输出的是什么？答案是’function’，函数声明优先于变量声明。</p>
 <h4 id="语言采用的是函数作用域"><a href="#语言采用的是函数作用域" class="headerlink" title="语言采用的是函数作用域"></a>语言采用的是函数作用域</h4><p>Javascript使用的是函数作用域，至少在ES6出现之前（ES6开始支持块级作用域），作用域的生成以函数为单位。</p>
 <h4 id="函数亦可赋值，传参"><a href="#函数亦可赋值，传参" class="headerlink" title="函数亦可赋值，传参"></a>函数亦可赋值，传参</h4><p>函数也可以作为参数传递，可以作为返回值返回。正是它一等公民的身份写照！在Javascript中这几乎是随处可见，例如：</p>

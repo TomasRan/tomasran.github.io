@@ -3,6 +3,30 @@
 
 
     
+  <url>
+    <loc>tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/</loc>
+    <lastmod>2017-07-02T02:15:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>Javascript函数相关</title>
+        <pubTime>2016-11-21T07:55:12.000Z</pubTime>
+        
+        <tag>硬绑定</tag>
+         
+        <tag>绑定丢失</tag>
+         
+        <tag>this指针</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript" url="tomasran.space/category/Javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>tomasran.space/archives/oWZgIdOs5O2rjSUngSRMQg/</loc>
@@ -106,30 +130,6 @@
            
              
               <breadCrumb title="BOM" url="tomasran.space/category/BOM/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>tomasran.space/archives/QvKCA14vYKd0ejUlJjdz8w/</loc>
-    <lastmod>2016-11-25T07:33:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>Javascript函数相关</title>
-        <pubTime>2016-11-21T07:55:12.000Z</pubTime>
-        
-        <tag>硬绑定</tag>
-         
-        <tag>绑定丢失</tag>
-         
-        <tag>this指针</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript" url="tomasran.space/category/Javascript/"/>
           
         </display>
     </data>
