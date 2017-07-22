@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="tomasran.space/"/>
-  <updated>2017-06-02T03:02:23.000Z</updated>
+  <updated>2017-07-22T01:18:25.000Z</updated>
   <id>tomasran.space/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos下离线安装nvidia驱动和cuda环境</title>
+    <link href="tomasran.space/archives/6xgSD-MrQfMzSwu7MHNS6g/"/>
+    <id>tomasran.space/archives/6xgSD-MrQfMzSwu7MHNS6g/</id>
+    <published>2017-07-22T01:15:50.000Z</published>
+    <updated>2017-07-22T01:18:25.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;centos下-nvidia驱动和cuda环境安装&quot;&gt;&lt;a href=&quot;#centos下-nvidia驱动和cuda环境安装&quot; class=&quot;headerlink&quot; title=&quot;centos下 nvidia驱动和cuda环境安装&quot;&gt;&lt;/a&gt;centos下 nvidia驱动和cuda环境安装&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;禁用nouveau驱动&lt;br&gt;在 /etc/modprobe.d/ 目录下新建文件blacklist-nouveau.conf，并写入以下内容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;blacklist nouveau&lt;br&gt;options nouveau modeset=0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;重新生成 kernel initramfs:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight ada&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo dracut &lt;span class=&quot;comment&quot;&gt;--force&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;重启&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;sudo&lt;/span&gt; reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;验证驱动被禁用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;lsmod &lt;span class=&quot;string&quot;&gt;| grep nouveau&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果无结果显示则表明成功禁用。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;修改 /etc/inittab 文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;id:5:initdefault: &amp;gt; id:3:initdefault:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如上，将5改为3，保存。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;重启&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;sudo&lt;/span&gt; reboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;安装nvidia驱动和cuda&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight julia&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd xxxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo sh cuda_&amp;lt;version&amp;gt;_linux.run&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;centos下-nvidia驱动和cuda环境安装&quot;&gt;&lt;a href=&quot;#centos下-nvidia驱动和cuda环境安装&quot; class=&quot;headerlink&quot; title=&quot;centos下 nvidia驱动和cuda环境安装&quot;&gt;&lt;/a&gt;centos下 nvidia驱动和cuda环境安装&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;禁用nouveau驱动&lt;br&gt;在 /etc/modprobe.d/ 目录下新建文件blacklist-nouveau.conf，并写入以下内容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;blacklist nouveau&lt;br&gt;options nouveau modeset=0&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="InstallationManual" scheme="tomasran.space/category/InstallationManual/"/>
+    
+    
+      <category term="cuda" scheme="tomasran.space/tags/cuda/"/>
+    
+      <category term="nvidia驱动" scheme="tomasran.space/tags/nvidia%E9%A9%B1%E5%8A%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>web开发的职业素养：拒绝XSS</title>
